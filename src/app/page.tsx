@@ -1,3 +1,4 @@
+import { About } from "@/components/about";
 import { CommandMenu } from "@/components/command-menu";
 import { Education } from "@/components/education";
 import { Projects } from "@/components/projects";
@@ -84,10 +85,7 @@ export default function Page() {
         </div>
 
         <Section>
-          <h2 className="text-xl font-bold">About</h2>
-          <p className="text-pretty font-mono text-sm text-muted-foreground">
-            {RESUME_DATA.summary}
-          </p>
+          <About summary={RESUME_DATA.summary} />
         </Section>
 
         <Section>
