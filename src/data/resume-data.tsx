@@ -1,7 +1,7 @@
 import { GitHubIcon } from "@/components/icons/GitHubIcon";
 import { LinkedInIcon } from "@/components/icons/LinkedInIcon";
-import EmidsLogo from "@/images/logos/Emids.png";
-import IBMLogo from "@/images/logos/IBM.png";
+import EmidsLogo from "@/data/images/logos/Emids.png";
+import IBMLogo from "@/data/images/logos/IBM.png";
 
 export const RESUME_DATA = {
   name: "Ewhan Han",
