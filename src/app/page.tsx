@@ -39,24 +39,30 @@ export default function Page() {
             </p>
             <div className="flex gap-x-1 pt-1 font-mono text-sm text-muted-foreground print:hidden">
               {RESUME_DATA.contact.email ? (
-                <a href={`mailto:${RESUME_DATA.contact.email}`}>
+                <a
+                  href={`mailto:${RESUME_DATA.contact.email}`}
+                  aria-label={`External link to email: ${RESUME_DATA.contact.email}`}
+                >
                   <Button
                     className="h-8 w-8"
                     variant="outline"
                     size="icon"
-                    aria-label="Open email client"
+                    aria-label={`Open email client with: ${RESUME_DATA.contact.email}`}
                   >
                     <MailIcon className="h-4 w-4" />
                   </Button>
                 </a>
               ) : null}
               {RESUME_DATA.contact.tel ? (
-                <a href={`tel:${RESUME_DATA.contact.tel}`}>
+                <a
+                  href={`tel:${RESUME_DATA.contact.tel}`}
+                  aria-label={`External link to phone: ${RESUME_DATA.contact.tel}`}
+                >
                   <Button
                     className="h-8 w-8"
                     variant="outline"
                     size="icon"
-                    aria-label="Open phone app"
+                    aria-label={`Open phone app with: ${RESUME_DATA.contact.tel}`}
                   >
                     <PhoneIcon className="h-4 w-4" />
                   </Button>
@@ -70,7 +76,10 @@ export default function Page() {
                   size="icon"
                   aria-label={`External link that opens ${social.name}`}
                 >
-                  <a href={social.url}>
+                  <a
+                    href={social.url}
+                    aria-label={`External link that opens ${social.name}: ${social.url}`}
+                  >
                     <social.icon className="h-4 w-4" />
                   </a>
                 </Button>
@@ -78,12 +87,15 @@ export default function Page() {
             </div>
             <div className="hidden flex-col gap-x-1 font-mono text-sm text-muted-foreground print:flex">
               {RESUME_DATA.contact.email ? (
-                <a href={`mailto:${RESUME_DATA.contact.email}`}>
+                <a
+                  href={`mailto:${RESUME_DATA.contact.email}`}
+                  aria-hidden="true"
+                >
                   <span className="underline">{RESUME_DATA.contact.email}</span>
                 </a>
               ) : null}
               {RESUME_DATA.contact.tel ? (
-                <a href={`tel:${RESUME_DATA.contact.tel}`}>
+                <a href={`tel:${RESUME_DATA.contact.tel}`} aria-hidden="true">
                   <span className="underline">{RESUME_DATA.contact.tel}</span>
                 </a>
               ) : null}
