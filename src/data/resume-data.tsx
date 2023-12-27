@@ -60,12 +60,12 @@ export const RESUME_DATA = {
       company: "IBM",
       link: "https://www.ibm.com/sterling",
       badges: ["Remote"],
-      title: "Lead Android Developer → Full Stack Developer",
+      title: "Software Engineer",
       logo: IBMLogo,
-      start: "2015",
-      end: "2021",
+      start: "2020",
+      end: "2022",
       description:
-        "Created Android mobile apps and led teams for companies like Vision Media, DKMS, or AAA. Built live streaming application for Evercast from scratch. Technologies: Android, Kotlin, React, TypeScript, GraphQL",
+        "Engaged as an Engineer within IBM’s hybrid cloud strategy team, focusing on the IBM Sterling Supply Chain. Contributed to enterprise-level support for IBM Sterling SaaS applications, enhancing client experiences in implementing and deploying complex supply chain solutions in a cloud environment.",
     },
   ],
   skills: ["JavaScript", "TypeScript", "React/Next.js/Remix", "Node.js"],
@@ -89,25 +89,14 @@ export const RESUME_DATA = {
       },
     },
     {
-      title: "Monito",
-      techStack: ["Side Project", "TypeScript", "Next.js", "Browser Extension"],
+      title: "IBM Salesforce Extras",
+      techStack: ["JavaScript", "Bootstrap", "JQuery", "Browser Extension"],
       description:
-        "Browser extension that records everything happening in a web application",
+        "Browser extension designed to enhance the efficiency and user experience of case management systems. This extension introduced a suite of features aimed at improving case visibility, streamlining workflow, and increasing productivity for users.",
       logo: null,
       link: {
-        label: "monito.dev",
-        href: "https://monito.dev/",
-      },
-    },
-    {
-      title: "Jarocki.me",
-      techStack: ["Side Project", "Next.js", "MDX"],
-      description:
-        "My personal website and blog. Built with Next.js and Notion API",
-      logo: null,
-      link: {
-        label: "github.com",
-        href: "https://jarocki.me/",
+        label: "IBM Salesforce Extras",
+        href: "https://addons.mozilla.org/en-CA/firefox/addon/ibm-salesforce-extras/",
       },
     },
   ],
