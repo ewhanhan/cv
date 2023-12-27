@@ -30,6 +30,8 @@ export function ProjectCard({
             {link ? (
               <a
                 href={link}
+                aria-label={`External link that opens ${title} in a new tab:
+                ${link}`}
                 target="_blank"
                 className="inline-flex items-center gap-1 hover:underline"
               >

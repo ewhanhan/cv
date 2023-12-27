@@ -31,7 +31,7 @@ export default function Page() {
                 className="inline-flex gap-x-1.5 align-baseline leading-none hover:underline"
                 href={RESUME_DATA.locationLink}
                 target="_blank"
-                aria-label="View location on map"
+                aria-label="View my location on google maps"
               >
                 <GlobeIcon className="h-3 w-3" />
                 {RESUME_DATA.location}
@@ -68,7 +68,7 @@ export default function Page() {
                   className="h-8 w-8"
                   variant="outline"
                   size="icon"
-                  aria-label={`Open ${social.name}`}
+                  aria-label={`External link that opens ${social.name}`}
                 >
                   <a href={social.url}>
                     <social.icon className="h-4 w-4" />
