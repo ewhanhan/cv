@@ -9,7 +9,7 @@ export const RESUME_DATA = {
   location: "North York / Toronto, Canada",
   locationLink: "https://www.google.com/maps/place/northyork",
   about:
-    "Full Stack Engineer focused on building products with extra attention to details",
+    "Detail-oriented Full Stack Developer dedicated to crafting high-quality products.",
   summary:
     "Under the wings of some super-smart folks, I've learned a ton, contributed to cool client projects, and juggled deadlines. I love a good challenge and getting my hands dirty in all things code. In short, it's been a journey of growing, coding, and thriving in a team that loves tech as much as I do! Currently, I work mostly with TypeScript, React, and Node.js.",
   avatarUrl: "https://avatars.githubusercontent.com/u/40779221?v=4",
