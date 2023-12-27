@@ -1,20 +1,25 @@
+import { Badge } from "@/components/ui/badge";
 import {
   Card,
-  CardHeader,
   CardContent,
   CardDescription,
+  CardHeader,
   CardTitle,
-} from "./ui/card";
-import { Badge } from "./ui/badge";
+} from "@/components/ui/card";
 
-interface Props {
+interface ProjectCardProps {
   title: string;
   description: string;
   tags: readonly string[];
   link?: string;
 }
 
-export function ProjectCard({ title, description, tags, link }: Props) {
+export function ProjectCard({
+  title,
+  description,
+  tags,
+  link,
+}: ProjectCardProps) {
   return (
     <Card className="flex flex-col overflow-hidden border border-muted p-3">
       <CardHeader className="">

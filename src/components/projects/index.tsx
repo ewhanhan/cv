@@ -1,4 +1,4 @@
-import { ProjectCard } from "@/components/project-card";
+import { ProjectCard } from "@/components/projects/project-card";
 import { type ResumeData } from "@/data/resume-data";
 import React from "react";
 
