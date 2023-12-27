@@ -31,6 +31,7 @@ export default function Page() {
                 className="inline-flex gap-x-1.5 align-baseline leading-none hover:underline"
                 href={RESUME_DATA.locationLink}
                 target="_blank"
+                aria-label="View location on map"
               >
                 <GlobeIcon className="h-3 w-3" />
                 {RESUME_DATA.location}
@@ -39,14 +40,24 @@ export default function Page() {
             <div className="flex gap-x-1 pt-1 font-mono text-sm text-muted-foreground print:hidden">
               {RESUME_DATA.contact.email ? (
                 <a href={`mailto:${RESUME_DATA.contact.email}`}>
-                  <Button className="h-8 w-8" variant="outline" size="icon">
+                  <Button
+                    className="h-8 w-8"
+                    variant="outline"
+                    size="icon"
+                    aria-label="Open email client"
+                  >
                     <MailIcon className="h-4 w-4" />
                   </Button>
                 </a>
               ) : null}
               {RESUME_DATA.contact.tel ? (
                 <a href={`tel:${RESUME_DATA.contact.tel}`}>
-                  <Button className="h-8 w-8" variant="outline" size="icon">
+                  <Button
+                    className="h-8 w-8"
+                    variant="outline"
+                    size="icon"
+                    aria-label="Open phone app"
+                  >
                     <PhoneIcon className="h-4 w-4" />
                   </Button>
                 </a>
@@ -57,6 +68,7 @@ export default function Page() {
                   className="h-8 w-8"
                   variant="outline"
                   size="icon"
+                  aria-label={`Open ${social.name}`}
                 >
                   <a href={social.url}>
                     <social.icon className="h-4 w-4" />
