@@ -11,7 +11,7 @@ export const RESUME_DATA = {
   about:
     "Full Stack Engineer focused on building products with extra attention to details",
   summary:
-    "As a Full Stack Engineer, I have successfully taken multiple products from 0 to 1. Currently, I work mostly with TypeScript, React, and Node.js.",
+    "Under the wings of some super-smart folks, I've learned a ton, contributed to cool client projects, and juggled deadlines. I love a good challenge and getting my hands dirty in all things code. In short, it's been a journey of growing, coding, and thriving in a team that loves tech as much as I do! Currently, I work mostly with TypeScript, React, and Node.js.",
   avatarUrl: "https://avatars.githubusercontent.com/u/40779221?v=4",
   personalWebsiteUrl: "https://ewhan.me",
   contact: {

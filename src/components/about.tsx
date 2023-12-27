@@ -1,3 +1,5 @@
+"use client";
+
 import { ResumeData } from "@/data/resume-data";
 import React from "react";
 

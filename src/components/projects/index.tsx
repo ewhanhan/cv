@@ -1,3 +1,5 @@
+"use client";
+
 import { ProjectCard } from "@/components/projects/project-card";
 import { type ResumeData } from "@/data/resume-data";
 import React from "react";

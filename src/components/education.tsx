@@ -1,3 +1,5 @@
+"use client";
+
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { type ResumeData } from "@/data/resume-data";
 import React from "react";
@@ -10,9 +12,9 @@ export const Education: React.FC<EducationProps> = ({ education }) => {
   return (
     <>
       <h2 className="text-xl font-bold">Education</h2>
-      {education.map((education) => {
+      {education.map((education, index) => {
         return (
-          <Card key={education.school}>
+          <Card key={education.school + index}>
             <CardHeader>
               <div className="flex items-center justify-between gap-x-2 text-base">
                 <h3 className="font-semibold leading-none">

@@ -1,3 +1,5 @@
+"use client";
+
 import { Badge } from "@/components/ui/badge";
 import { type ResumeData } from "@/data/resume-data";
 import React from "react";
