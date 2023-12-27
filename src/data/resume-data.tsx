@@ -11,7 +11,7 @@ export const RESUME_DATA = {
   about:
     "Full Stack Engineer focused on building products with extra attention to details",
   summary:
-    "As a Full Stack Engineer, I have successfully taken multiple products from 0 to 1. I lead teams effectively, ensuring an environment where people can do their best work. Currently, I work mostly with TypeScript, React, Node.js, and GraphQL. I have over 8 years of experience in working remotely with companies all around the world.",
+    "As a Full Stack Engineer, I have successfully taken multiple products from 0 to 1. Currently, I work mostly with TypeScript, React, and Node.js.",
   avatarUrl: "https://avatars.githubusercontent.com/u/40779221?v=4",
   personalWebsiteUrl: "https://ewhan.me",
   contact: {
@@ -33,7 +33,7 @@ export const RESUME_DATA = {
   education: [
     {
       school: "Western University",
-      degree: "B.A in Economics",
+      degree: "BA in Economics",
       start: "2011",
       end: "2016",
     },
@@ -54,7 +54,7 @@ export const RESUME_DATA = {
       start: "2022",
       end: "Current",
       description:
-        "Implemented new features, led squad, worked on improving the way developers ship the code, started migration from Emotion to Tailwind CSS and more. Technologies: React, TypeScript, GraphQL",
+        "Implemented new features, led squad, worked on improving the way developers ship the code, started migration from Emotion to Tailwind CSS and more. Technologies: React, TypeScript",
     },
     {
       company: "IBM",
@@ -112,3 +112,5 @@ export const RESUME_DATA = {
     },
   ],
 } as const;
+
+export type ResumeData = typeof RESUME_DATA;
