@@ -1,7 +1,7 @@
 {
   "folders": [
     {
-      "path": "..",
+      "path": ".."
     }
   ],
   "settings": {
@@ -20,5 +20,5 @@
       "addMissingImports": "explicit"
     },
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
+  }
 }
