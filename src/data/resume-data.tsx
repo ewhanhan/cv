@@ -96,7 +96,7 @@ export const RESUME_DATA = {
       logo: null,
       link: {
         label: "IBM Salesforce Extras",
-        href: "https://addons.mozilla.org/en-CA/firefox/addon/ibm-salesforce-extras/",
+        href: "https://chromewebstore.google.com/detail/ibm-salesforce-extras/gpmkkenlhceokknfjgfkmlgaeljnhnkp",
       },
     },
   ],
