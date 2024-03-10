@@ -1,14 +1,14 @@
 {
   "folders": [
     {
-      "path": ".."
-    }
+      "path": "..",
+    },
   ],
   "settings": {
     "eslint.workingDirectories": [
       {
-        "mode": "auto"
-      }
+        "mode": "auto",
+      },
     ],
     "editor.formatOnSave": true,
     "editor.formatOnPaste": true,
@@ -17,8 +17,8 @@
     "editor.codeActionsOnSave": {
       "source.fixAll.eslint": "explicit",
       "source.organizeImports": "explicit",
-      "addMissingImports": "explicit"
+      "addMissingImports": "explicit",
     },
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+  },
 }
