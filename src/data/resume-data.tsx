@@ -54,7 +54,7 @@ export const RESUME_DATA = {
       start: "2022",
       end: "Current",
       description:
-        "Implemented new features, led squad, worked on improving the way developers ship the code, started migration from Emotion to Tailwind CSS and more. Technologies: React, TypeScript",
+        "Current role as a Full Stack Developer at Emids, working on a variety of projects in the healthcare sector. I work with a team of developers to build and maintain web applications that help healthcare providers deliver better care to their patients.",
     },
     {
       company: "IBM",
