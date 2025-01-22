@@ -72,6 +72,22 @@ export const RESUME_DATA = {
   projects: [
     {
       title:
+        "EPulseAI",
+      techStack: [
+        "Python",
+        "TypeScript",
+        "React",
+        "Material UI"
+      ],
+      description: "Developed EPulseAI, a groundbreaking Generative AI-powered platform by Emids, designed to revolutionize and simplify healthcare product development from ideation to rollout. The platform enhances medical care quality, improves patient outcomes, and delivers an intuitive user experience by automating time-consuming tasks, saving time and resources for healthcare stakeholders.",
+      logo: EmidsLogo,
+      link: {
+        label: "emids.com/epulse-ai",
+        href: "https://www.emids.com/epulse-ai/"
+      }
+    },
+    {
+      title:
         "The Royal's Rapid Access Addiction Medicine (RAAM) Digital Front Door",
       techStack: [
         "TypeScript",
