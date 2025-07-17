@@ -8,10 +8,9 @@ export const RESUME_DATA = {
   initials: "EH",
   location: "North York / Toronto, Canada",
   locationLink: "https://www.google.com/maps/place/northyork",
-  about:
-    "Detail-oriented Full Stack Developer dedicated to crafting high-quality products.",
+  about: "",
   summary:
-    "Under the wings of some super-smart folks, I've learned a ton, contributed to cool client projects, and juggled deadlines. I love a good challenge and getting my hands dirty in all things code. In short, it's been a journey of growing, coding, and thriving in a team that loves tech as much as I do! Currently, I work mostly with TypeScript, React, and Node.js.",
+    "Frontend-focused software engineer with 3+ years of experience in building responsive web applications. Experienced in quick MVP delivery and remote team collaboration. Passionate about creating impactful solutions for users through teamwork and iteration.",
   avatarUrl: "https://avatars.githubusercontent.com/u/40779221?v=4",
   personalWebsiteUrl: "https://ewhan.me",
   contact: {
@@ -39,7 +38,7 @@ export const RESUME_DATA = {
     },
     {
       school: "Western University",
-      degree: "BESc in Software Engineering",
+      degree: "BESc in Software Engineering w/ Distinction",
       start: "2017",
       end: "2022",
     },
@@ -68,7 +67,25 @@ export const RESUME_DATA = {
         "Engaged as an Engineer within IBM’s hybrid cloud strategy team, focusing on the IBM Sterling Supply Chain. Contributed to enterprise-level support for IBM Sterling SaaS applications, enhancing client experiences in implementing and deploying complex supply chain solutions in a cloud environment.",
     },
   ],
-  skills: ["JavaScript", "TypeScript", "React/Next.js/Remix", "Node.js"],
+  skills: [
+    "React.js",
+    "TypeScript",
+    "JavaScript",
+    "HTML5",
+    "CSS/SCSS",
+    "Material UI",
+    "TailwindCSS",
+    "Node.js",
+    "Python",
+    "Azure Functions",
+    "Azure Pipelines",
+    "Git",
+    "Docker",
+    "T-SQL",
+    "Microsoft SQL Server",
+    "Vitest",
+    "Chai",
+  ],
   projects: [
     {
       title: "EPulseAI",
