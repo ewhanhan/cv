@@ -30,18 +30,18 @@
   "devDependencies": {
     "@eslint/eslintrc": "^3.3.1",
     "@eslint/js": "^9.31.0",
-    "@tailwindcss/postcss": "^4.0.0",
+    "@tailwindcss/postcss": "^4.1.11",
     "@types/node": "^22.16.4",
     "@types/react": "^19.1.8",
     "@types/react-dom": "^19.1.6",
-    "babel-plugin-react-compiler": "^19.1.0-rc.2",
+    "babel-plugin-react-compiler": "^19.1.0-rc.1-rc-af1b7da-20250421",
     "eslint": "^9.31.0",
     "eslint-config-next": "^15.4.1",
     "eslint-plugin-jsx-a11y": "^6.10.2",
     "postcss": "^8.5.6",
     "prettier": "^3.6.2",
     "prettier-plugin-tailwindcss": "^0.6.14",
-    "tailwindcss": "^4.0.0",
+    "tailwindcss": "^4.1.11",
     "typescript": "^5.8.3"
   }
 }
