@@ -1,0 +1,121 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:best-practices",
+    "group:monorepos",
+    "group:recommended",
+    ":dependencyDashboard",
+    ":semanticCommits",
+    ":automergeDigest",
+    ":automergeMinor"
+  ],
+  "schedule": [
+    "before 6am on monday"
+  ],
+  "timezone": "America/New_York",
+  "labels": [
+    "dependencies"
+  ],
+  "constraints": {
+    "node": ">=18.0.0"
+  },
+  "minimumReleaseAge": "3 days",
+  "automergeStrategy": "squash",
+  "packageRules": [
+    {
+      "description": "Group all non-major updates",
+      "matchUpdateTypes": [
+        "minor",
+        "patch",
+        "pin",
+        "digest"
+      ],
+      "groupName": "all non-major dependencies",
+      "groupSlug": "all-minor-patch",
+      "automerge": true
+    },
+    {
+      "description": "Group React ecosystem updates",
+      "matchPackagePatterns": [
+        "^react",
+        "^@types/react"
+      ],
+      "groupName": "React ecosystem",
+      "automerge": false
+    },
+    {
+      "description": "Group Next.js ecosystem updates",
+      "matchPackagePatterns": [
+        "^next",
+        "eslint-config-next"
+      ],
+      "groupName": "Next.js ecosystem",
+      "automerge": false
+    },
+    {
+      "description": "Group Radix UI updates",
+      "matchPackagePatterns": [
+        "^@radix-ui/"
+      ],
+      "groupName": "Radix UI",
+      "automerge": true
+    },
+    {
+      "description": "Group Tailwind CSS updates",
+      "matchPackagePatterns": [
+        "^tailwind",
+        "^@tailwindcss/"
+      ],
+      "groupName": "Tailwind CSS",
+      "automerge": true
+    },
+    {
+      "description": "Group ESLint updates",
+      "matchPackagePatterns": [
+        "^eslint",
+        "^@eslint/"
+      ],
+      "groupName": "ESLint",
+      "automerge": true
+    },
+    {
+      "description": "Group TypeScript updates",
+      "matchPackagePatterns": [
+        "^typescript",
+        "^@types/"
+      ],
+      "groupName": "TypeScript",
+      "automerge": false
+    },
+    {
+      "description": "Auto-merge development dependencies",
+      "matchDepTypes": [
+        "devDependencies"
+      ],
+      "matchUpdateTypes": [
+        "patch"
+      ],
+      "automerge": true
+    },
+    {
+      "description": "Require manual review for major updates",
+      "matchUpdateTypes": [
+        "major"
+      ],
+      "automerge": false
+    }
+  ],
+  "vulnerabilityAlerts": {
+    "enabled": true,
+    "automerge": true
+  },
+  "lockFileMaintenance": {
+    "enabled": true,
+    "schedule": [
+      "before 6am on monday"
+    ]
+  },
+  "prConcurrentLimit": 3,
+  "branchConcurrentLimit": 5,
+  "semanticCommits": "enabled"
+}
