@@ -17,10 +17,10 @@ export const Education: React.FC<EducationProps> = ({ education }) => {
           <Card key={education.school + index}>
             <CardHeader>
               <div className="flex items-center justify-between gap-x-2 text-base">
-                <h3 className="font-semibold leading-none">
+                <h3 className="leading-none font-semibold">
                   {education.school}
                 </h3>
-                <div className="text-sm tabular-nums text-gray-500">
+                <div className="text-sm text-gray-500 tabular-nums">
                   {education.start} - {education.end}
                 </div>
               </div>
