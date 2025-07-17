@@ -12,7 +12,7 @@ import { GlobeIcon, MailIcon, PhoneIcon } from "lucide-react";
 import { type Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: `${RESUME_DATA.name} | ${RESUME_DATA.about}`,
+  title: `${RESUME_DATA.name}`,
   description: RESUME_DATA.summary,
 };
 
