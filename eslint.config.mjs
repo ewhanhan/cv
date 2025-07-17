@@ -1,7 +1,7 @@
-import { FlatCompat } from '@eslint/eslintrc';
-import js from '@eslint/js';
-import path from 'node:path';
-import { fileURLToPath } from 'node:url';
+import { FlatCompat } from "@eslint/eslintrc";
+import js from "@eslint/js";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -15,5 +15,5 @@ const compat = new FlatCompat({
 export default [
   // Use FlatCompat for Next.js config and jsx-a11y
   // (Next.js config already includes jsx-a11y/recommended)
-  ...compat.extends('next/core-web-vitals', 'plugin:jsx-a11y/recommended'),
+  ...compat.extends("next/core-web-vitals", "plugin:jsx-a11y/recommended"),
 ];
