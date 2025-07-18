@@ -7,7 +7,10 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint .",
-    "lint:fix": "eslint . --fix"
+    "lint:fix": "eslint . --fix",
+    "clean": "rimraf .next out coverage",
+    "clean:all": "rimraf .next out coverage node_modules package-lock.json",
+    "prebuild": "rimraf .next out coverage"
   },
   "dependencies": {
     "@radix-ui/react-avatar": "^1.1.10",
@@ -46,6 +49,7 @@
     "postcss": "^8.5.6",
     "prettier": "^3.6.2",
     "prettier-plugin-tailwindcss": "^0.6.14",
+    "rimraf": "^6.0.1",
     "tailwindcss": "^4.1.11",
     "typescript": "^5.8.3"
   }
