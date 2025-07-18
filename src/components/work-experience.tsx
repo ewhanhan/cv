@@ -1,13 +1,13 @@
-"use client";
+'use client';
 
-import { Badge } from "@/components/ui/badge";
-import { Card, CardContent, CardHeader } from "@/components/ui/card";
-import { type ResumeData } from "@/data/resume-data";
-import React from "react";
+import type { ResumeData } from '@/data/resume-data';
+import React from 'react';
+import { Badge } from '@/components/ui/badge';
+import { Card, CardContent, CardHeader } from '@/components/ui/card';
 
-interface WorkExperienceProps {
-  workExperience: ResumeData["work"];
-}
+type WorkExperienceProps = {
+  workExperience: ResumeData['work'];
+};
 
 export const WorkExperience: React.FC<WorkExperienceProps> = ({
   workExperience,
@@ -32,7 +32,7 @@ export const WorkExperience: React.FC<WorkExperienceProps> = ({
                   </a>
 
                   <span className="inline-flex gap-x-1">
-                    {work.badges.map((badge) => (
+                    {work.badges.map(badge => (
                       <Badge
                         variant="secondary"
                         className="align-middle text-xs"
@@ -44,7 +44,10 @@ export const WorkExperience: React.FC<WorkExperienceProps> = ({
                   </span>
                 </h3>
                 <div className="text-sm text-gray-500 tabular-nums">
-                  {work.start} - {work.end}
+                  {work.start}
+                  {' '}
+                  -
+                  {work.end}
                 </div>
               </div>
 

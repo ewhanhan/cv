@@ -1,11 +1,11 @@
-"use client";
+'use client';
 
-import { ResumeData } from "@/data/resume-data";
-import React from "react";
+import type { ResumeData } from '@/data/resume-data';
+import React from 'react';
 
-interface AboutProps {
-  summary: ResumeData["summary"];
-}
+type AboutProps = {
+  summary: ResumeData['summary'];
+};
 
 export const About: React.FC<AboutProps> = ({ summary }) => (
   <>

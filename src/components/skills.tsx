@@ -1,12 +1,12 @@
-"use client";
+'use client';
 
-import { Badge } from "@/components/ui/badge";
-import { type ResumeData } from "@/data/resume-data";
-import React from "react";
+import type { ResumeData } from '@/data/resume-data';
+import React from 'react';
+import { Badge } from '@/components/ui/badge';
 
-interface SkillProps {
-  skills: ResumeData["skills"];
-}
+type SkillProps = {
+  skills: ResumeData['skills'];
+};
 
 export const Skills: React.FC<SkillProps> = ({ skills }) => {
   return (

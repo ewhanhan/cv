@@ -1,15 +1,15 @@
-import { About } from "@/components/about";
-import { CommandMenu } from "@/components/command-menu";
-import { Education } from "@/components/education";
-import { Projects } from "@/components/projects";
-import { Skills } from "@/components/skills";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Button } from "@/components/ui/button";
-import { Section } from "@/components/ui/section";
-import { WorkExperience } from "@/components/work-experience";
-import { RESUME_DATA } from "@/data/resume-data";
-import { GlobeIcon, MailIcon, PhoneIcon } from "lucide-react";
-import { type Metadata } from "next";
+import type { Metadata } from 'next';
+import { GlobeIcon, MailIcon, PhoneIcon } from 'lucide-react';
+import { About } from '@/components/about';
+import { CommandMenu } from '@/components/command-menu';
+import { Education } from '@/components/education';
+import { Projects } from '@/components/projects';
+import { Skills } from '@/components/skills';
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import { Button } from '@/components/ui/button';
+import { Section } from '@/components/ui/section';
+import { WorkExperience } from '@/components/work-experience';
+import { RESUME_DATA } from '@/data/resume-data';
 
 export const metadata: Metadata = {
   title: `${RESUME_DATA.name}`,
@@ -40,37 +40,41 @@ export default function Page() {
               </a>
             </p>
             <div className="text-muted-foreground flex gap-x-1 pt-1 font-mono text-sm print:hidden">
-              {RESUME_DATA.contact.email ? (
-                <a
-                  href={`mailto:${RESUME_DATA.contact.email}`}
-                  aria-label={`External link to email: ${RESUME_DATA.contact.email}`}
-                >
-                  <Button
-                    className="h-8 w-8"
-                    variant="outline"
-                    size="icon"
-                    aria-label={`Open email client with: ${RESUME_DATA.contact.email}`}
-                  >
-                    <MailIcon className="h-4 w-4" />
-                  </Button>
-                </a>
-              ) : null}
-              {RESUME_DATA.contact.tel ? (
-                <a
-                  href={`tel:${RESUME_DATA.contact.tel}`}
-                  aria-label={`External link to phone: ${RESUME_DATA.contact.tel}`}
-                >
-                  <Button
-                    className="h-8 w-8"
-                    variant="outline"
-                    size="icon"
-                    aria-label={`Open phone app with: ${RESUME_DATA.contact.tel}`}
-                  >
-                    <PhoneIcon className="h-4 w-4" />
-                  </Button>
-                </a>
-              ) : null}
-              {RESUME_DATA.contact.social.map((social) => (
+              {RESUME_DATA.contact.email
+                ? (
+                    <a
+                      href={`mailto:${RESUME_DATA.contact.email}`}
+                      aria-label={`External link to email: ${RESUME_DATA.contact.email}`}
+                    >
+                      <Button
+                        className="h-8 w-8"
+                        variant="outline"
+                        size="icon"
+                        aria-label={`Open email client with: ${RESUME_DATA.contact.email}`}
+                      >
+                        <MailIcon className="h-4 w-4" />
+                      </Button>
+                    </a>
+                  )
+                : null}
+              {RESUME_DATA.contact.tel
+                ? (
+                    <a
+                      href={`tel:${RESUME_DATA.contact.tel}`}
+                      aria-label={`External link to phone: ${RESUME_DATA.contact.tel}`}
+                    >
+                      <Button
+                        className="h-8 w-8"
+                        variant="outline"
+                        size="icon"
+                        aria-label={`Open phone app with: ${RESUME_DATA.contact.tel}`}
+                      >
+                        <PhoneIcon className="h-4 w-4" />
+                      </Button>
+                    </a>
+                  )
+                : null}
+              {RESUME_DATA.contact.social.map(social => (
                 <Button
                   key={social.name}
                   className="h-8 w-8"
@@ -88,19 +92,23 @@ export default function Page() {
               ))}
             </div>
             <div className="text-muted-foreground hidden flex-col gap-x-1 font-mono text-sm print:flex">
-              {RESUME_DATA.contact.email ? (
-                <a
-                  href={`mailto:${RESUME_DATA.contact.email}`}
-                  aria-hidden="true"
-                >
-                  <span className="underline">{RESUME_DATA.contact.email}</span>
-                </a>
-              ) : null}
-              {RESUME_DATA.contact.tel ? (
-                <a href={`tel:${RESUME_DATA.contact.tel}`} aria-hidden="true">
-                  <span className="underline">{RESUME_DATA.contact.tel}</span>
-                </a>
-              ) : null}
+              {RESUME_DATA.contact.email
+                ? (
+                    <a
+                      href={`mailto:${RESUME_DATA.contact.email}`}
+                      aria-hidden="true"
+                    >
+                      <span className="underline">{RESUME_DATA.contact.email}</span>
+                    </a>
+                  )
+                : null}
+              {RESUME_DATA.contact.tel
+                ? (
+                    <a href={`tel:${RESUME_DATA.contact.tel}`} aria-hidden="true">
+                      <span className="underline">{RESUME_DATA.contact.tel}</span>
+                    </a>
+                  )
+                : null}
             </div>
           </div>
 
@@ -134,9 +142,9 @@ export default function Page() {
         links={[
           {
             url: RESUME_DATA.personalWebsiteUrl,
-            title: "Personal Website",
+            title: 'Personal Website',
           },
-          ...RESUME_DATA.contact.social.map((socialMediaLink) => ({
+          ...RESUME_DATA.contact.social.map(socialMediaLink => ({
             url: socialMediaLink.url,
             title: socialMediaLink.name,
           })),

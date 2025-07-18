@@ -1,4 +1,4 @@
-import type { NextConfig } from "next";
+import type { NextConfig } from 'next';
 
 const nextConfig = {
   // React 19 features
@@ -17,7 +17,7 @@ const nextConfig = {
   poweredByHeader: false,
 
   // Bundle optimization
-  transpilePackages: ["lucide-react"],
+  transpilePackages: ['lucide-react'],
 } satisfies NextConfig;
 
 export default nextConfig;

@@ -1,12 +1,12 @@
-"use client";
+'use client';
 
-import { ProjectCard } from "@/components/projects/project-card";
-import { type ResumeData } from "@/data/resume-data";
-import React from "react";
+import type { ResumeData } from '@/data/resume-data';
+import React from 'react';
+import { ProjectCard } from '@/components/projects/project-card';
 
-interface ProjectsProps {
-  projects: ResumeData["projects"];
-}
+type ProjectsProps = {
+  projects: ResumeData['projects'];
+};
 
 export const Projects: React.FC<ProjectsProps> = ({ projects }) => {
   return (
@@ -20,7 +20,7 @@ export const Projects: React.FC<ProjectsProps> = ({ projects }) => {
               title={project.title}
               description={project.description}
               tags={project.techStack}
-              link={"link" in project ? project.link.href : undefined}
+              link={'link' in project ? project.link.href : undefined}
             />
           );
         })}
