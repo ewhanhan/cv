@@ -19,8 +19,15 @@ export const WorkExperience: React.FC<WorkExperienceProps> = ({
         return (
           <Card key={work.company}>
             <CardHeader>
-              <div className="flex items-center justify-between gap-x-2 text-base">
-                <h3 className="inline-flex items-center justify-center gap-x-1 leading-none font-semibold">
+              <div className={`
+                flex items-center justify-between gap-x-2 text-base
+              `}
+              >
+                <h3 className={`
+                  inline-flex items-center justify-center gap-x-1 leading-none
+                  font-semibold
+                `}
+                >
                   <a
                     className="hover:underline"
                     href={work.link}

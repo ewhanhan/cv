@@ -18,8 +18,17 @@ export const metadata: Metadata = {
 
 export default function Page() {
   return (
-    <main className="relative container mx-auto scroll-my-12 overflow-auto p-4 md:p-16 print:p-12">
-      <div className="mx-auto w-full max-w-2xl space-y-8 bg-white print:space-y-6">
+    <main className={`
+      relative container mx-auto scroll-my-12 overflow-auto p-4
+      md:p-16
+      print:p-12
+    `}
+    >
+      <div className={`
+        mx-auto w-full max-w-2xl space-y-8 bg-white
+        print:space-y-6
+      `}
+      >
         <Header>
           <PersonalInfo
             name={RESUME_DATA.name}
@@ -50,7 +59,11 @@ export default function Page() {
           <Skills skills={RESUME_DATA.skills} />
         </Section>
 
-        <Section className="print-force-new-page scroll-mb-16">
+        <Section className={`
+          scroll-mb-16
+          print:break-before-page
+        `}
+        >
           <Projects projects={RESUME_DATA.projects} />
         </Section>
       </div>

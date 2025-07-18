@@ -5,7 +5,7 @@ import { cn } from '@/lib/utils';
 const Card = ({ ref, className, ...props }: React.HTMLAttributes<HTMLDivElement> & { ref?: React.RefObject<HTMLDivElement | null> }) => (
   <div
     ref={ref}
-    className={cn('bg-card text-card-foreground rounded-lg', className)}
+    className={cn('rounded-lg bg-card text-card-foreground', className)}
     {...props}
   />
 );
@@ -36,7 +36,7 @@ CardTitle.displayName = 'CardTitle';
 const CardDescription = ({ ref, className, ...props }: React.HTMLAttributes<HTMLParagraphElement> & { ref?: React.RefObject<HTMLParagraphElement | null> }) => (
   <p
     ref={ref}
-    className={cn('text-muted-foreground text-sm', className)}
+    className={cn('text-sm text-muted-foreground', className)}
     {...props}
   />
 );
@@ -46,7 +46,7 @@ const CardContent = ({ ref, className, ...props }: React.HTMLAttributes<HTMLDivE
   <div
     ref={ref}
     className={cn(
-      'text-muted-foreground font-mono text-sm text-pretty',
+      'font-mono text-sm text-pretty text-muted-foreground',
       className,
     )}
     {...props}

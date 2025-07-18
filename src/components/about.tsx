@@ -10,7 +10,7 @@ type AboutProps = {
 export const About: React.FC<AboutProps> = ({ summary }) => (
   <>
     <h2 className="text-xl font-bold">About</h2>
-    <p className="text-muted-foreground font-mono text-sm text-pretty">
+    <p className="font-mono text-sm text-pretty text-muted-foreground">
       {summary}
     </p>
   </>

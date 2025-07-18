@@ -23,9 +23,16 @@ export const ContactNavigation: React.FC<ContactNavigationProps> = ({
   <nav className="space-y-1.5" aria-label="Contact information and links">
     <address className="not-italic">
       {/* Location - always visible */}
-      <p className="text-muted-foreground max-w-md items-center font-mono text-xs text-pretty">
+      <p className={`
+        max-w-md items-center font-mono text-xs text-pretty
+        text-muted-foreground
+      `}
+      >
         <a
-          className="inline-flex gap-x-1.5 align-baseline leading-none hover:underline"
+          className={`
+            inline-flex gap-x-1.5 align-baseline leading-none
+            hover:underline
+          `}
           href={locationLink}
           target="_blank"
           aria-label="View my location on google maps"
@@ -36,7 +43,13 @@ export const ContactNavigation: React.FC<ContactNavigationProps> = ({
       </p>
 
       {/* Contact links - screen view (icons) */}
-      <div className="text-muted-foreground flex gap-x-1 pt-1 font-mono text-sm print:hidden" aria-label="Contact and social links">
+      <div
+        className={`
+          flex gap-x-1 pt-1 font-mono text-sm text-muted-foreground
+          print:hidden
+        `}
+        aria-label="Contact and social links"
+      >
         {email && (
           <ContactButton
             href={`mailto:${email}`}
@@ -62,7 +75,11 @@ export const ContactNavigation: React.FC<ContactNavigationProps> = ({
       </div>
 
       {/* Contact links - print view (text) */}
-      <div className="text-muted-foreground hidden flex-col gap-x-1 font-mono text-sm print:flex">
+      <div className={`
+        hidden flex-col gap-x-1 font-mono text-sm text-muted-foreground
+        print:flex
+      `}
+      >
         {email && (
           <a href={`mailto:${email}`} aria-hidden="true">
             <span>{email}</span>

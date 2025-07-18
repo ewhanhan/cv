@@ -23,7 +23,7 @@ export function ProjectCard({
   link,
 }: ProjectCardProps) {
   return (
-    <Card className="border-muted flex flex-col overflow-hidden border p-3">
+    <Card className="flex flex-col overflow-hidden border border-muted p-3">
       <CardHeader className="">
         <div className="space-y-1">
           <CardTitle className="text-base">
@@ -34,7 +34,10 @@ export function ProjectCard({
                     aria-label={`External link that opens ${title} in a new tab:
                 ${link}`}
                     target="_blank"
-                    className="inline-flex items-center gap-1 hover:underline"
+                    className={`
+                      inline-flex items-center gap-1
+                      hover:underline
+                    `}
                   >
                     {title}
                     {' '}
@@ -45,7 +48,11 @@ export function ProjectCard({
                   title
                 )}
           </CardTitle>
-          <div className="hidden font-mono text-xs underline print:visible">
+          <div className={`
+            hidden font-mono text-xs underline
+            print:visible
+          `}
+          >
             {link?.replace('https://', '').replace('www.', '').replace('/', '')}
           </div>
           <CardDescription className="font-mono text-xs">

@@ -30,7 +30,7 @@ const AvatarFallback = ({ ref, className, ...props }: React.ComponentPropsWithou
   <AvatarPrimitive.Fallback
     ref={ref}
     className={cn(
-      'bg-muted flex h-full w-full items-center justify-center rounded-xl',
+      'flex h-full w-full items-center justify-center rounded-xl bg-muted',
       className,
     )}
     {...props}
