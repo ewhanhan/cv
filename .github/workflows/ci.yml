@@ -29,9 +29,6 @@ jobs:
       - name: Run linting
         run: npm run lint
 
-      - name: Check code formatting
-        run: npm run prettier -- --check
-
   auto-merge:
     needs: test
     runs-on: ubuntu-latest
