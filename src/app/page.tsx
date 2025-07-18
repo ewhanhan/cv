@@ -40,40 +40,36 @@ export default function Page() {
               </a>
             </p>
             <div className="text-muted-foreground flex gap-x-1 pt-1 font-mono text-sm print:hidden">
-              {RESUME_DATA.contact.email
-                ? (
-                    <a
-                      href={`mailto:${RESUME_DATA.contact.email}`}
-                      aria-label={`External link to email: ${RESUME_DATA.contact.email}`}
-                    >
-                      <Button
-                        className="h-8 w-8"
-                        variant="outline"
-                        size="icon"
-                        aria-label={`Open email client with: ${RESUME_DATA.contact.email}`}
-                      >
-                        <MailIcon className="h-4 w-4" />
-                      </Button>
-                    </a>
-                  )
-                : null}
-              {RESUME_DATA.contact.tel
-                ? (
-                    <a
-                      href={`tel:${RESUME_DATA.contact.tel}`}
-                      aria-label={`External link to phone: ${RESUME_DATA.contact.tel}`}
-                    >
-                      <Button
-                        className="h-8 w-8"
-                        variant="outline"
-                        size="icon"
-                        aria-label={`Open phone app with: ${RESUME_DATA.contact.tel}`}
-                      >
-                        <PhoneIcon className="h-4 w-4" />
-                      </Button>
-                    </a>
-                  )
-                : null}
+              {RESUME_DATA.contact.email && (
+                <a
+                  href={`mailto:${RESUME_DATA.contact.email}`}
+                  aria-label={`External link to email: ${RESUME_DATA.contact.email}`}
+                >
+                  <Button
+                    className="h-8 w-8"
+                    variant="outline"
+                    size="icon"
+                    aria-label={`Open email client with: ${RESUME_DATA.contact.email}`}
+                  >
+                    <MailIcon className="h-4 w-4" />
+                  </Button>
+                </a>
+              )}
+              {RESUME_DATA.contact.tel && (
+                <a
+                  href={`tel:${RESUME_DATA.contact.tel}`}
+                  aria-label={`External link to phone: ${RESUME_DATA.contact.tel}`}
+                >
+                  <Button
+                    className="h-8 w-8"
+                    variant="outline"
+                    size="icon"
+                    aria-label={`Open phone app with: ${RESUME_DATA.contact.tel}`}
+                  >
+                    <PhoneIcon className="h-4 w-4" />
+                  </Button>
+                </a>
+              )}
               {RESUME_DATA.contact.social.map(social => (
                 <Button
                   key={social.name}
@@ -92,23 +88,19 @@ export default function Page() {
               ))}
             </div>
             <div className="text-muted-foreground hidden flex-col gap-x-1 font-mono text-sm print:flex">
-              {RESUME_DATA.contact.email
-                ? (
-                    <a
-                      href={`mailto:${RESUME_DATA.contact.email}`}
-                      aria-hidden="true"
-                    >
-                      <span className="underline">{RESUME_DATA.contact.email}</span>
-                    </a>
-                  )
-                : null}
-              {RESUME_DATA.contact.tel
-                ? (
-                    <a href={`tel:${RESUME_DATA.contact.tel}`} aria-hidden="true">
-                      <span className="underline">{RESUME_DATA.contact.tel}</span>
-                    </a>
-                  )
-                : null}
+              {RESUME_DATA.contact.email && (
+                <a
+                  href={`mailto:${RESUME_DATA.contact.email}`}
+                  aria-hidden="true"
+                >
+                  <span className="underline">{RESUME_DATA.contact.email}</span>
+                </a>
+              )}
+              {RESUME_DATA.contact.tel && (
+                <a href={`tel:${RESUME_DATA.contact.tel}`} aria-hidden="true">
+                  <span className="underline">{RESUME_DATA.contact.tel}</span>
+                </a>
+              )}
             </div>
           </div>
 
