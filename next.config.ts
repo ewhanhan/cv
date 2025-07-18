@@ -11,7 +11,6 @@ const nextConfig = {
   // Build optimizations
   compiler: {
     reactRemoveProperties: true,
-    removeConsole: true,
   },
 
   // Security & headers
