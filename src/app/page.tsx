@@ -19,8 +19,8 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <main className="relative container mx-auto scroll-my-12 overflow-auto p-4 md:p-16 print:p-12">
-      <section className="mx-auto w-full max-w-2xl space-y-8 bg-white print:space-y-6">
-        <div className="flex items-center justify-between">
+      <div className="mx-auto w-full max-w-2xl space-y-8 bg-white print:space-y-6">
+        <header className="flex items-center justify-between">
           <div className="flex-1 space-y-1.5">
             <h1 className="text-2xl font-bold">{RESUME_DATA.name}</h1>
             {RESUME_DATA.about && (
@@ -28,55 +28,72 @@ export default function Page() {
                 {RESUME_DATA.about}
               </p>
             )}
-            <p className="text-muted-foreground max-w-md items-center font-mono text-xs text-pretty">
-              <a
-                className="inline-flex gap-x-1.5 align-baseline leading-none hover:underline"
-                href={RESUME_DATA.locationLink}
-                target="_blank"
-                aria-label="View my location on google maps"
-              >
-                <GlobeIcon className="h-3 w-3" />
-                {RESUME_DATA.location}
-              </a>
-            </p>
-            <div className="text-muted-foreground flex gap-x-1 pt-1 font-mono text-sm print:hidden">
-              {RESUME_DATA.contact.email && (
+            <address className="not-italic">
+              <p className="text-muted-foreground max-w-md items-center font-mono text-xs text-pretty">
                 <a
-                  href={`mailto:${RESUME_DATA.contact.email}`}
-                  aria-label={`External link to email: ${RESUME_DATA.contact.email}`}
+                  className="inline-flex gap-x-1.5 align-baseline leading-none hover:underline"
+                  href={RESUME_DATA.locationLink}
+                  target="_blank"
+                  aria-label="View my location on google maps"
                 >
-                  <Button
-                    className="h-8 w-8"
-                    variant="outline"
-                    size="icon"
-                    aria-label={`Open email client with: ${RESUME_DATA.contact.email}`}
+                  <GlobeIcon className="h-3 w-3" />
+                  {RESUME_DATA.location}
+                </a>
+              </p>
+              <div className="text-muted-foreground hidden flex-col gap-x-1 font-mono text-sm print:flex">
+                {RESUME_DATA.contact.email && (
+                  <a
+                    href={`mailto:${RESUME_DATA.contact.email}`}
+                    aria-hidden="true"
+                  >
+                    <span className="underline">{RESUME_DATA.contact.email}</span>
+                  </a>
+                )}
+                {RESUME_DATA.contact.tel && (
+                  <a href={`tel:${RESUME_DATA.contact.tel}`} aria-hidden="true">
+                    <span className="underline">{RESUME_DATA.contact.tel}</span>
+                  </a>
+                )}
+              </div>
+            </address>
+            <nav className="text-muted-foreground flex gap-x-1 pt-1 font-mono text-sm print:hidden" aria-label="Contact and social links">
+              {RESUME_DATA.contact.email && (
+                <Button
+                  asChild
+                  className="h-8 w-8"
+                  variant="outline"
+                  size="icon"
+                >
+                  <a
+                    href={`mailto:${RESUME_DATA.contact.email}`}
+                    aria-label={`External link to email: ${RESUME_DATA.contact.email}`}
                   >
                     <MailIcon className="h-4 w-4" />
-                  </Button>
-                </a>
+                  </a>
+                </Button>
               )}
               {RESUME_DATA.contact.tel && (
-                <a
-                  href={`tel:${RESUME_DATA.contact.tel}`}
-                  aria-label={`External link to phone: ${RESUME_DATA.contact.tel}`}
+                <Button
+                  asChild
+                  className="h-8 w-8"
+                  variant="outline"
+                  size="icon"
                 >
-                  <Button
-                    className="h-8 w-8"
-                    variant="outline"
-                    size="icon"
-                    aria-label={`Open phone app with: ${RESUME_DATA.contact.tel}`}
+                  <a
+                    href={`tel:${RESUME_DATA.contact.tel}`}
+                    aria-label={`External link to phone: ${RESUME_DATA.contact.tel}`}
                   >
                     <PhoneIcon className="h-4 w-4" />
-                  </Button>
-                </a>
+                  </a>
+                </Button>
               )}
               {RESUME_DATA.contact.social.map(social => (
                 <Button
                   key={social.name}
+                  asChild
                   className="h-8 w-8"
                   variant="outline"
                   size="icon"
-                  aria-label={`External link that opens ${social.name}`}
                 >
                   <a
                     href={social.url}
@@ -86,29 +103,14 @@ export default function Page() {
                   </a>
                 </Button>
               ))}
-            </div>
-            <div className="text-muted-foreground hidden flex-col gap-x-1 font-mono text-sm print:flex">
-              {RESUME_DATA.contact.email && (
-                <a
-                  href={`mailto:${RESUME_DATA.contact.email}`}
-                  aria-hidden="true"
-                >
-                  <span className="underline">{RESUME_DATA.contact.email}</span>
-                </a>
-              )}
-              {RESUME_DATA.contact.tel && (
-                <a href={`tel:${RESUME_DATA.contact.tel}`} aria-hidden="true">
-                  <span className="underline">{RESUME_DATA.contact.tel}</span>
-                </a>
-              )}
-            </div>
+            </nav>
           </div>
 
           <Avatar className="h-28 w-28">
             <AvatarImage alt={RESUME_DATA.name} src={RESUME_DATA.avatarUrl} />
             <AvatarFallback>{RESUME_DATA.initials}</AvatarFallback>
           </Avatar>
-        </div>
+        </header>
 
         <Section>
           <About summary={RESUME_DATA.summary} />
@@ -128,7 +130,7 @@ export default function Page() {
         <Section className="print-force-new-page scroll-mb-16">
           <Projects projects={RESUME_DATA.projects} />
         </Section>
-      </section>
+      </div>
 
       <CommandMenu
         links={[
