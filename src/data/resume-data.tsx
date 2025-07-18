@@ -79,6 +79,7 @@ export const RESUME_DATA = {
     'Python',
     'Azure Functions',
     'Azure Pipelines',
+    'Azure DevOps',
     'Git',
     'Docker',
     'T-SQL',
@@ -89,7 +90,12 @@ export const RESUME_DATA = {
   projects: [
     {
       title: 'EPulseAI',
-      techStack: ['Python', 'TypeScript', 'React', 'Material UI'],
+      techStack: [
+        'Python',
+        'TypeScript',
+        'React',
+        'Material UI',
+      ],
       description:
         'Developed EPulseAI, a groundbreaking Generative AI-powered platform by Emids, designed to revolutionize and simplify healthcare product development from ideation to rollout. The platform enhances medical care quality, improves patient outcomes, and delivers an intuitive user experience by automating time-consuming tasks, saving time and resources for healthcare stakeholders.',
       logo: EmidsLogo,
@@ -104,9 +110,12 @@ export const RESUME_DATA = {
       techStack: [
         'TypeScript',
         'React',
+        'RxJS',
         'Material UI',
         'Twilio Video SDK',
-        'Hive',
+        'Dyte Video SDK',
+        'Node.js',
+        'MongoDB',
       ],
       description:
         'A platform that  allows patients to connect with healthcare professionals through video conferencing. It includes features like preliminary questionnaires, health card validation, and the ability to include family members or support workers in appointments. The initiative aims to provide easy and broad access to healthcare',
@@ -118,7 +127,12 @@ export const RESUME_DATA = {
     },
     {
       title: 'IBM Salesforce Extras',
-      techStack: ['JavaScript', 'Bootstrap', 'JQuery', 'Browser Extension'],
+      techStack: [
+        'JavaScript',
+        'Bootstrap',
+        'JQuery',
+        'Browser Extension',
+      ],
       description:
         'Browser extension designed to enhance the efficiency and user experience of case management systems. This extension introduced a suite of features aimed at improving case visibility, streamlining workflow, and increasing productivity for users.',
       logo: null,
