@@ -5,6 +5,7 @@ const nextConfig = {
   experimental: {
     reactCompiler: true,
     typedRoutes: true,
+    optimizePackageImports: ['lucide-react'],
   },
 
   // Build optimizations
@@ -15,9 +16,6 @@ const nextConfig = {
 
   // Security & headers
   poweredByHeader: false,
-
-  // Bundle optimization
-  transpilePackages: ['lucide-react'],
 } satisfies NextConfig;
 
 export default nextConfig;
