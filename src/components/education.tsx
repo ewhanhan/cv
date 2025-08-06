@@ -1,7 +1,7 @@
 'use client';
 
 import type { ResumeData } from '@/data/resume-data';
-import React from 'react';
+import React, { Fragment } from 'react';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
 
 type EducationProps = {
@@ -10,7 +10,7 @@ type EducationProps = {
 
 export const Education: React.FC<EducationProps> = ({ education }) => {
   return (
-    <>
+    <Fragment>
       <h2 className="text-xl font-bold">Education</h2>
       {education.map((education) => {
         return (
@@ -35,6 +35,6 @@ export const Education: React.FC<EducationProps> = ({ education }) => {
           </Card>
         );
       })}
-    </>
+    </Fragment>
   );
 };

@@ -1,7 +1,7 @@
 'use client';
 
 import type { ResumeData } from '@/data/resume-data';
-import React from 'react';
+import React, { Fragment } from 'react';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
 
@@ -13,7 +13,7 @@ export const WorkExperience: React.FC<WorkExperienceProps> = ({
   workExperience,
 }) => {
   return (
-    <>
+    <Fragment>
       <h2 className="text-xl font-bold">Work Experience</h2>
       {workExperience.map((work) => {
         return (
@@ -66,6 +66,6 @@ export const WorkExperience: React.FC<WorkExperienceProps> = ({
           </Card>
         );
       })}
-    </>
+    </Fragment>
   );
 };

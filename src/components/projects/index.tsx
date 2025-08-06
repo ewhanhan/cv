@@ -1,7 +1,7 @@
 'use client';
 
 import type { ResumeData } from '@/data/resume-data';
-import React from 'react';
+import React, { Fragment } from 'react';
 import { ProjectCard } from '@/components/projects/project-card';
 
 type ProjectsProps = {
@@ -10,7 +10,7 @@ type ProjectsProps = {
 
 export const Projects: React.FC<ProjectsProps> = ({ projects }) => {
   return (
-    <>
+    <Fragment>
       <h2 className="text-xl font-bold">Projects</h2>
       <div className="-mx-3 grid grid-cols-1 gap-3">
         {projects.map((project) => {
@@ -25,6 +25,6 @@ export const Projects: React.FC<ProjectsProps> = ({ projects }) => {
           );
         })}
       </div>
-    </>
+    </Fragment>
   );
 };
