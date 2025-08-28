@@ -49,10 +49,12 @@ test.describe('CV Basic Functionality', () => {
     await expect(page.getByText('Education')).toBeVisible();
 
     // Check university entries
-    const firstEducation = TEST_RESUME_DATA.education[0];
-    const lastEducation = TEST_RESUME_DATA.education[TEST_RESUME_DATA.education.length - 1];
-    await expect(page.getByText(firstEducation.school).first()).toBeVisible();
-    await expect(page.getByText(lastEducation.degree)).toBeVisible();
+    const firstEducation = TEST_RESUME_DATA.education.at(0);
+    const lastEducation = TEST_RESUME_DATA.education.at(-1);
+    expect(firstEducation).toBeDefined();
+    expect(lastEducation).toBeDefined();
+    await expect(page.getByText(firstEducation!.school).first()).toBeVisible();
+    await expect(page.getByText(lastEducation!.degree)).toBeVisible();
   });
 
   test('displays work experience section', async ({ page }) => {
@@ -62,8 +64,9 @@ test.describe('CV Basic Functionality', () => {
     await expect(page.getByText('Work Experience')).toBeVisible();
 
     // Check first work experience company
-    const firstJob = TEST_RESUME_DATA.work[0];
-    await expect(page.getByRole('link', { name: new RegExp(firstJob.company) })).toBeVisible();
+    const firstJob = TEST_RESUME_DATA.work.at(0);
+    expect(firstJob).toBeDefined();
+    await expect(page.getByRole('link', { name: new RegExp(firstJob!.company) })).toBeVisible();
   });
 
   test('social links are external links', async ({ page }) => {
