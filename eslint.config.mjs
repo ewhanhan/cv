@@ -23,8 +23,7 @@ export default antfu(
     },
 
     // Ignored paths
-    ignores: [
-    ],
+    ignores: ['.claude/**'],
   },
   // --- Next.js Specific Rules ---
   {

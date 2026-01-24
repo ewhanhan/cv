@@ -41,7 +41,7 @@ export function ProjectCard({
                   >
                     {title}
                     {' '}
-                    <span className="h-1 w-1 rounded-full bg-green-500"></span>
+                    <span className="size-1 rounded-full bg-green-500"></span>
                   </a>
                 )
               : (

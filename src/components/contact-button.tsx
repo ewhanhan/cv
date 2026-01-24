@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import * as React from 'react';
 import { Button } from '@/components/ui/button';
 
 type ContactButtonProps = {
@@ -18,12 +18,12 @@ export const ContactButton: React.FC<ContactButtonProps> = ({
 }) => (
   <Button
     asChild
-    className="h-8 w-8"
+    className="size-8"
     variant="outline"
     size="icon"
   >
     <a href={href} aria-label={ariaLabel}>
-      <Icon className="h-4 w-4" />
+      <Icon className="size-4" />
       {children}
     </a>
   </Button>

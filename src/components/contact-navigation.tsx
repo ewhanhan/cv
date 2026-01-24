@@ -2,7 +2,7 @@
 
 import type { ResumeData } from '@/data/resume-data';
 import { GlobeIcon, MailIcon, PhoneIcon } from 'lucide-react';
-import React from 'react';
+import * as React from 'react';
 import { ContactButton } from '@/components/contact-button';
 
 type ContactNavigationProps = {
@@ -37,7 +37,7 @@ export const ContactNavigation: React.FC<ContactNavigationProps> = ({
           target="_blank"
           aria-label="View my location on google maps"
         >
-          <GlobeIcon className="h-3 w-3" />
+          <GlobeIcon className="size-3" />
           {location}
         </a>
       </p>

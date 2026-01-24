@@ -38,9 +38,8 @@ const DialogContent = ({ ref, className, children, ...props }: React.ComponentPr
       ref={ref}
       className={cn(
         `
-          fixed top-[50%] left-[50%] z-50 grid w-full max-w-lg
-          translate-x-[-50%] translate-y-[-50%] gap-4 border bg-background p-6
-          shadow-lg duration-200
+          fixed top-[50%] left-[50%] z-50 grid w-full max-w-lg translate-[-50%]
+          gap-4 border bg-background p-6 shadow-lg duration-200
           data-[state=closed]:animate-out data-[state=closed]:fade-out-0
           data-[state=closed]:slide-out-to-left-1/2
           data-[state=closed]:slide-out-to-top-[48%]
@@ -65,7 +64,7 @@ const DialogContent = ({ ref, className, children, ...props }: React.ComponentPr
         data-[state=open]:bg-accent data-[state=open]:text-muted-foreground
       `}
       >
-        <X className="h-4 w-4" />
+        <X className="size-4" />
         <span className="sr-only">Close</span>
       </DialogPrimitive.Close>
     </DialogPrimitive.Content>

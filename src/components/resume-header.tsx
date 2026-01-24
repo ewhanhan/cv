@@ -1,7 +1,7 @@
 'use client';
 
 import type { ResumeData } from '@/data/resume-data';
-import React from 'react';
+import * as React from 'react';
 import { PersonalInfo } from '@/components/personal-info';
 import { ProfileAvatar } from '@/components/profile-avatar';
 

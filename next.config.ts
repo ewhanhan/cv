@@ -2,9 +2,9 @@ import type { NextConfig } from 'next';
 
 const nextConfig = {
   // React 19 features
+  reactCompiler: true,
+  typedRoutes: true,
   experimental: {
-    reactCompiler: true,
-    typedRoutes: true,
     optimizePackageImports: ['lucide-react'],
   },
 

@@ -1,7 +1,8 @@
 'use client';
 
 import type { ResumeData } from '@/data/resume-data';
-import React, { Fragment } from 'react';
+import * as React from 'react';
+import { Fragment } from 'react';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
 

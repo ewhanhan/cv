@@ -9,7 +9,7 @@ const Avatar = ({ ref, className, ...props }: React.ComponentPropsWithoutRef<typ
   <AvatarPrimitive.Root
     ref={ref}
     className={cn(
-      'relative flex h-10 w-10 shrink-0 overflow-hidden rounded-xl',
+      'relative flex size-10 shrink-0 overflow-hidden rounded-xl',
       className,
     )}
     {...props}
@@ -20,7 +20,7 @@ Avatar.displayName = AvatarPrimitive.Root.displayName;
 const AvatarImage = ({ ref, className, ...props }: React.ComponentPropsWithoutRef<typeof AvatarPrimitive.Image> & { ref?: React.RefObject<React.ElementRef<typeof AvatarPrimitive.Image> | null> }) => (
   <AvatarPrimitive.Image
     ref={ref}
-    className={cn('aspect-square h-full w-full', className)}
+    className={cn('aspect-square size-full', className)}
     {...props}
   />
 );
@@ -30,7 +30,7 @@ const AvatarFallback = ({ ref, className, ...props }: React.ComponentPropsWithou
   <AvatarPrimitive.Fallback
     ref={ref}
     className={cn(
-      'flex h-full w-full items-center justify-center rounded-xl bg-muted',
+      'flex size-full items-center justify-center rounded-xl bg-muted',
       className,
     )}
     {...props}
