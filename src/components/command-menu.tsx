@@ -35,7 +35,7 @@ export const CommandMenu = ({ links }: Props) => {
   return (
     <Fragment>
       <p className={`
-        fixed right-0 bottom-0 left-0 border-t border-t-muted bg-white p-1
+        fixed inset-x-0 bottom-0 border-t border-t-muted bg-white p-1
         text-center text-sm text-muted-foreground
         print:hidden
       `}
