@@ -20,7 +20,10 @@ async function generateTestData() {
       // Remove the export and replace with const
       .replace(/export const RESUME_DATA = \{/, 'const RESUME_DATA = {')
       // Remove the type assertion and export
-      .replace(/\} as const;\n\nexport type ResumeData = typeof RESUME_DATA;/, '};')
+      .replace(
+        /\} as const;\n\nexport type ResumeData = typeof RESUME_DATA;/,
+        '};',
+      )
       // Remove any icon references (replace with null or remove the property)
       .replace(/icon: \w+Icon,?\n?/g, '')
       // Remove logo imports (replace with null)
@@ -28,7 +31,7 @@ async function generateTestData() {
 
     // Create the test data content
     const testDataContent = `// Auto-generated from resume-data.tsx
-// Run 'npm run generate-test-data' to update this file
+// Run 'pnpm run generate-test-data' to update this file
 
 ${extractedData}
 

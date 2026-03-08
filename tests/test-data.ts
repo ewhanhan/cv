@@ -1,5 +1,6 @@
 // Auto-generated from resume-data.tsx
-// Run 'npm run generate-test-data' to update this file
+// Run 'pnpm run generate-test-data' to update this file
+
 
 const RESUME_DATA = {
   name: 'Ewhan Han',
@@ -18,11 +19,11 @@ const RESUME_DATA = {
       {
         name: 'GitHub',
         url: 'https://github.com/ewhanhan',
-      },
+              },
       {
         name: 'LinkedIn',
         url: 'https://www.linkedin.com/in/ewhanhan/',
-      },
+              },
     ],
   },
   education: [
@@ -45,7 +46,7 @@ const RESUME_DATA = {
       link: 'https://www.emids.com/',
       badges: ['Remote'],
       title: 'Full Stack Developer',
-      start: '2022',
+            start: '2022',
       end: 'Current',
       description:
         'Current role as a Full Stack Developer at Emids, working on a variety of projects in the healthcare sector. I work with a team of developers to build and maintain web applications that help healthcare providers deliver better care to their patients.',
@@ -55,7 +56,7 @@ const RESUME_DATA = {
       link: 'https://www.ibm.com/sterling',
       badges: ['Remote'],
       title: 'Software Engineer',
-      start: '2020',
+            start: '2020',
       end: '2022',
       description:
         'Engaged as an Engineer within IBM’s hybrid cloud strategy team, focusing on the IBM Sterling Supply Chain. Contributed to enterprise-level support for IBM Sterling SaaS applications, enhancing client experiences in implementing and deploying complex supply chain solutions in a cloud environment.',
@@ -87,7 +88,7 @@ const RESUME_DATA = {
       techStack: ['Python', 'TypeScript', 'React', 'Material UI'],
       description:
         'Developed EPulseAI, a groundbreaking Generative AI-powered platform by Emids, designed to revolutionize and simplify healthcare product development from ideation to rollout. The platform enhances medical care quality, improves patient outcomes, and delivers an intuitive user experience by automating time-consuming tasks, saving time and resources for healthcare stakeholders.',
-      link: {
+            link: {
         label: 'emids.com/epulse-ai',
         href: 'https://www.emids.com/epulse-ai/',
       },
@@ -126,5 +127,6 @@ const RESUME_DATA = {
     },
   ],
 } as const;
+
 
 export const TEST_RESUME_DATA = RESUME_DATA;
