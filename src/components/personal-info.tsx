@@ -30,15 +30,17 @@ export const PersonalInfo: React.FC<PersonalInfoProps> = ({
 }) => (
   <div className="flex-1 space-y-1.5">
     <h1 className="text-2xl font-bold">{name}</h1>
-    {about && (
-      <p
-        className={`
-          max-w-md font-mono text-sm text-pretty text-muted-foreground
-        `}
-      >
-        {about}
-      </p>
-    )}
+    {about
+      ? (
+          <p
+            className={`
+              max-w-md font-mono text-sm text-pretty text-muted-foreground
+            `}
+          >
+            {about}
+          </p>
+        )
+      : null}
     <ContactNavigation
       location={location}
       locationLink={locationLink}
