@@ -90,12 +90,7 @@ export const RESUME_DATA = {
   projects: [
     {
       title: 'EPulseAI',
-      techStack: [
-        'Python',
-        'TypeScript',
-        'React',
-        'Material UI',
-      ],
+      techStack: ['Python', 'TypeScript', 'React', 'Material UI'],
       description:
         'Developed EPulseAI, a groundbreaking Generative AI-powered platform by Emids, designed to revolutionize and simplify healthcare product development from ideation to rollout. The platform enhances medical care quality, improves patient outcomes, and delivers an intuitive user experience by automating time-consuming tasks, saving time and resources for healthcare stakeholders.',
       logo: EmidsLogo,
@@ -106,7 +101,7 @@ export const RESUME_DATA = {
     },
     {
       title:
-        'The Royal\'s Rapid Access Addiction Medicine (RAAM) Digital Front Door',
+        "The Royal's Rapid Access Addiction Medicine (RAAM) Digital Front Door",
       techStack: [
         'TypeScript',
         'React',
@@ -127,12 +122,7 @@ export const RESUME_DATA = {
     },
     {
       title: 'IBM Salesforce Extras',
-      techStack: [
-        'JavaScript',
-        'Bootstrap',
-        'JQuery',
-        'Browser Extension',
-      ],
+      techStack: ['JavaScript', 'Bootstrap', 'JQuery', 'Browser Extension'],
       description:
         'Browser extension designed to enhance the efficiency and user experience of case management systems. This extension introduced a suite of features aimed at improving case visibility, streamlining workflow, and increasing productivity for users.',
       logo: null,
@@ -143,5 +133,3 @@ export const RESUME_DATA = {
     },
   ],
 } as const;
-
-export type ResumeData = typeof RESUME_DATA;
