@@ -1,7 +1,3 @@
-'use client';
-
-import * as React from 'react';
-import { Fragment } from 'react';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
 
@@ -19,18 +15,17 @@ type WorkExperienceProps = {
   workExperience: readonly WorkItem[];
 };
 
-export const WorkExperience: React.FC<WorkExperienceProps> = ({
-  workExperience,
-}) => {
+export function WorkExperience({ workExperience }: WorkExperienceProps) {
   return (
-    <Fragment>
+    <>
       <h2 className="text-xl font-bold">Work Experience</h2>
       {workExperience.map((work) => {
         return (
           <Card key={work.company}>
             <CardHeader>
-              <div
-                className="flex items-center justify-between gap-x-2 text-base"
+              <div className="
+                flex items-center justify-between gap-x-2 text-base
+              "
               >
                 <h3
                   className={`
@@ -76,6 +71,6 @@ export const WorkExperience: React.FC<WorkExperienceProps> = ({
           </Card>
         );
       })}
-    </Fragment>
+    </>
   );
-};
+}

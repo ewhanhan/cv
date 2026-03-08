@@ -1,5 +1,3 @@
-'use client';
-
 import { Badge } from '@/components/ui/badge';
 import {
   Card,
@@ -44,14 +42,13 @@ export function ProjectCard({
                     <span className="size-1 rounded-full bg-green-500"></span>
                   </a>
                 )
-              : (
-                  title
-                )}
+              : title}
           </CardTitle>
-          <div className={`
-            hidden font-mono text-xs underline
-            print:visible
-          `}
+          <div
+            className={`
+              hidden font-mono text-xs underline
+              print:visible
+            `}
           >
             {link?.replace('https://', '').replace('www.', '').replace('/', '')}
           </div>

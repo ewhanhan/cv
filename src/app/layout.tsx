@@ -10,7 +10,6 @@ export const metadata: Metadata = {
   description: 'Personal website of Ewhan Han',
 };
 
-// If loading a variable font, you don't need to specify the font weight
 const inter = Inter({
   subsets: ['latin'],
   display: 'swap',

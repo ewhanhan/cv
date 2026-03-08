@@ -1,6 +1,6 @@
 import { cn } from '@/lib/utils';
 
-export type HeaderProps = {} & React.HTMLAttributes<HTMLElement>;
+export type HeaderProps = React.HTMLAttributes<HTMLElement>;
 
 export function Header({ className, ...props }: HeaderProps) {
   return (

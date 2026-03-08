@@ -1,7 +1,3 @@
-'use client';
-
-import * as React from 'react';
-import { Fragment } from 'react';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
 
 type EducationItem = {
@@ -15,16 +11,17 @@ type EducationProps = {
   education: readonly EducationItem[];
 };
 
-export const Education: React.FC<EducationProps> = ({ education }) => {
+export function Education({ education }: EducationProps) {
   return (
-    <Fragment>
+    <>
       <h2 className="text-xl font-bold">Education</h2>
       {education.map((education) => {
         return (
           <Card key={education.school + education.start}>
             <CardHeader>
-              <div
-                className="flex items-center justify-between gap-x-2 text-base"
+              <div className="
+                flex items-center justify-between gap-x-2 text-base
+              "
               >
                 <h3 className="leading-none font-semibold">
                   {education.school}
@@ -41,6 +38,6 @@ export const Education: React.FC<EducationProps> = ({ education }) => {
           </Card>
         );
       })}
-    </Fragment>
+    </>
   );
-};
+}

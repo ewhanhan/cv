@@ -1,7 +1,6 @@
 'use client';
 
 import * as React from 'react';
-import { Fragment } from 'react';
 
 import {
   CommandDialog,
@@ -13,18 +12,18 @@ import {
   CommandSeparator,
 } from '@/components/ui/command';
 
-type Props = {
+type CommandMenuProps = {
   links: { url: string; title: string }[];
 };
 
-export const CommandMenu = ({ links }: Props) => {
-  const [open, setOpen] = React.useState(false);
+export const CommandMenu = ({ links }: CommandMenuProps) => {
+  const [isOpen, setIsOpen] = React.useState(false);
 
   React.useEffect(() => {
     const down = (e: KeyboardEvent) => {
       if (e.key === 'j' && (e.metaKey || e.ctrlKey)) {
         e.preventDefault();
-        setOpen(open => !open);
+        setIsOpen(prev => !prev);
       }
     };
 
@@ -33,20 +32,22 @@ export const CommandMenu = ({ links }: Props) => {
   }, []);
 
   return (
-    <Fragment>
-      <p className={`
-        fixed inset-x-0 bottom-0 border-t border-t-muted bg-white p-1
-        text-center text-sm text-muted-foreground
-        print:hidden
-      `}
+    <>
+      <p
+        className={`
+          fixed inset-x-0 bottom-0 border-t border-t-muted bg-white p-1
+          text-center text-sm text-muted-foreground
+          print:hidden
+        `}
       >
         Press
         {' '}
-        <kbd className={`
-          pointer-events-none inline-flex h-5 items-center gap-1 rounded-sm
-          border bg-muted px-1.5 font-mono text-[10px] font-medium
-          text-muted-foreground opacity-100 select-none
-        `}
+        <kbd
+          className={`
+            pointer-events-none inline-flex h-5 items-center gap-1 rounded-sm
+            border bg-muted px-1.5 font-mono text-[10px] font-medium
+            text-muted-foreground opacity-100 select-none
+          `}
         >
           <span className="text-xs">⌘</span>
           J
@@ -54,14 +55,14 @@ export const CommandMenu = ({ links }: Props) => {
         {' '}
         to open the command menu
       </p>
-      <CommandDialog open={open} onOpenChange={setOpen}>
+      <CommandDialog open={isOpen} onOpenChange={setIsOpen}>
         <CommandInput placeholder="Type a command or search..." />
         <CommandList>
           <CommandEmpty>No results found.</CommandEmpty>
           <CommandGroup heading="Actions">
             <CommandItem
               onSelect={() => {
-                setOpen(false);
+                setIsOpen(false);
                 window.print();
               }}
             >
@@ -73,7 +74,7 @@ export const CommandMenu = ({ links }: Props) => {
               <CommandItem
                 key={url}
                 onSelect={() => {
-                  setOpen(false);
+                  setIsOpen(false);
                   window.open(url, '_blank');
                 }}
               >
@@ -84,6 +85,6 @@ export const CommandMenu = ({ links }: Props) => {
           <CommandSeparator />
         </CommandList>
       </CommandDialog>
-    </Fragment>
+    </>
   );
 };

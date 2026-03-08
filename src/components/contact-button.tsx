@@ -1,30 +1,25 @@
-'use client';
-
-import * as React from 'react';
+import type { ComponentType, ReactNode } from 'react';
 import { Button } from '@/components/ui/button';
 
 type ContactButtonProps = {
   href: string;
   ariaLabel: string;
-  icon: React.ComponentType<{ className?: string }>;
-  children?: React.ReactNode;
+  icon: ComponentType<{ className?: string }>;
+  children?: ReactNode;
 };
 
-export const ContactButton: React.FC<ContactButtonProps> = ({
+export function ContactButton({
   href,
   ariaLabel,
   icon: Icon,
   children,
-}) => (
-  <Button
-    asChild
-    className="size-8"
-    variant="outline"
-    size="icon"
-  >
-    <a href={href} aria-label={ariaLabel}>
-      <Icon className="size-4" />
-      {children}
-    </a>
-  </Button>
-);
+}: ContactButtonProps) {
+  return (
+    <Button asChild className="size-8" variant="outline" size="icon">
+      <a href={href} aria-label={ariaLabel}>
+        <Icon className="size-4" />
+        {children}
+      </a>
+    </Button>
+  );
+}

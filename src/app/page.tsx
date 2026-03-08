@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
+import dynamic from 'next/dynamic';
 import { About } from '@/components/about';
-import { CommandMenu } from '@/components/command-menu';
 import { Education } from '@/components/education';
 import { PersonalInfo } from '@/components/personal-info';
 import { ProfileAvatar } from '@/components/profile-avatar';
@@ -11,8 +11,14 @@ import { Section } from '@/components/ui/section';
 import { WorkExperience } from '@/components/work-experience';
 import { RESUME_DATA } from '@/data/resume-data';
 
+const CommandMenu = dynamic(() =>
+  import('@/components/command-menu').then(mod => ({
+    default: mod.CommandMenu,
+  })),
+);
+
 export const metadata: Metadata = {
-  title: `${RESUME_DATA.name}`,
+  title: RESUME_DATA.name,
   description: RESUME_DATA.summary,
 };
 
