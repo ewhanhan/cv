@@ -1,12 +1,18 @@
 'use client';
 
-import type { ResumeData } from '@/data/resume-data';
 import * as React from 'react';
 import { Fragment } from 'react';
 import { ProjectCard } from '@/components/projects/project-card';
 
+type ProjectItem = {
+  title: string;
+  description: string;
+  techStack: readonly string[];
+  link: { href: string };
+};
+
 type ProjectsProps = {
-  projects: ResumeData['projects'];
+  projects: readonly ProjectItem[];
 };
 
 export const Projects: React.FC<ProjectsProps> = ({ projects }) => {
@@ -21,7 +27,7 @@ export const Projects: React.FC<ProjectsProps> = ({ projects }) => {
               title={project.title}
               description={project.description}
               tags={project.techStack}
-              link={'link' in project ? project.link.href : undefined}
+              link={project.link.href}
             />
           );
         })}

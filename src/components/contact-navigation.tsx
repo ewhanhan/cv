@@ -1,16 +1,21 @@
 'use client';
 
-import type { ResumeData } from '@/data/resume-data';
 import { GlobeIcon, MailIcon, PhoneIcon } from 'lucide-react';
 import * as React from 'react';
 import { ContactButton } from '@/components/contact-button';
 
+type SocialItem = {
+  name: string;
+  url: string;
+  icon: React.ComponentType<{ className?: string }>;
+};
+
 type ContactNavigationProps = {
-  location: ResumeData['location'];
-  locationLink: ResumeData['locationLink'];
-  email: ResumeData['contact']['email'];
-  tel: ResumeData['contact']['tel'];
-  social: ResumeData['contact']['social'];
+  location: string;
+  locationLink: string;
+  email: string;
+  tel: string;
+  social: readonly SocialItem[];
 };
 
 export const ContactNavigation: React.FC<ContactNavigationProps> = ({
@@ -95,7 +100,9 @@ export const ContactNavigation: React.FC<ContactNavigationProps> = ({
         {social.map(socialItem => (
           <a key={socialItem.name} href={socialItem.url} aria-hidden="true">
             <span>
-              {socialItem.name}: {socialItem.url}
+              {socialItem.name}
+              :
+              {socialItem.url}
             </span>
           </a>
         ))}

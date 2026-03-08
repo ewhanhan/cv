@@ -1,15 +1,24 @@
 'use client';
 
-import type { ResumeData } from '@/data/resume-data';
 import * as React from 'react';
 import { ContactNavigation } from '@/components/contact-navigation';
 
+type SocialItem = {
+  name: string;
+  url: string;
+  icon: React.ComponentType<{ className?: string }>;
+};
+
 type PersonalInfoProps = {
-  name: ResumeData['name'];
-  about: ResumeData['about'];
-  location: ResumeData['location'];
-  locationLink: ResumeData['locationLink'];
-  contact: ResumeData['contact'];
+  name: string;
+  about: string;
+  location: string;
+  locationLink: string;
+  contact: {
+    email: string;
+    tel: string;
+    social: readonly SocialItem[];
+  };
 };
 
 export const PersonalInfo: React.FC<PersonalInfoProps> = ({

@@ -1,11 +1,10 @@
 'use client';
 
-import type { ResumeData } from '@/data/resume-data';
 import * as React from 'react';
 import { Fragment } from 'react';
 
 type AboutProps = {
-  summary: ResumeData['summary'];
+  summary: string;
 };
 
 export const About: React.FC<AboutProps> = ({ summary }) => (

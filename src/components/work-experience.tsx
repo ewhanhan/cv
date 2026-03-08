@@ -1,13 +1,22 @@
 'use client';
 
-import type { ResumeData } from '@/data/resume-data';
 import * as React from 'react';
 import { Fragment } from 'react';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
 
+type WorkItem = {
+  company: string;
+  link: string;
+  badges: readonly string[];
+  title: string;
+  start: string;
+  end: string;
+  description: string;
+};
+
 type WorkExperienceProps = {
-  workExperience: ResumeData['work'];
+  workExperience: readonly WorkItem[];
 };
 
 export const WorkExperience: React.FC<WorkExperienceProps> = ({
@@ -16,11 +25,13 @@ export const WorkExperience: React.FC<WorkExperienceProps> = ({
   return (
     <Fragment>
       <h2 className="text-xl font-bold">Work Experience</h2>
-      {workExperience.map(work => {
+      {workExperience.map((work) => {
         return (
           <Card key={work.company}>
             <CardHeader>
-              <div className="flex items-center justify-between gap-x-2 text-base">
+              <div
+                className="flex items-center justify-between gap-x-2 text-base"
+              >
                 <h3
                   className={`
                     inline-flex items-center justify-center gap-x-1 leading-none
@@ -50,7 +61,10 @@ export const WorkExperience: React.FC<WorkExperienceProps> = ({
                   </span>
                 </h3>
                 <div className="text-sm text-gray-500 tabular-nums">
-                  {work.start} -{work.end}
+                  {work.start}
+                  {' '}
+                  -
+                  {work.end}
                 </div>
               </div>
 

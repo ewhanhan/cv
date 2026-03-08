@@ -1,12 +1,11 @@
 'use client';
 
-import type { ResumeData } from '@/data/resume-data';
 import * as React from 'react';
 import { Fragment } from 'react';
 import { Badge } from '@/components/ui/badge';
 
 type SkillProps = {
-  skills: ResumeData['skills'];
+  skills: readonly string[];
 };
 
 export const Skills: React.FC<SkillProps> = ({ skills }) => {

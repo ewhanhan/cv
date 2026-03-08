@@ -1,13 +1,12 @@
 'use client';
 
-import type { ResumeData } from '@/data/resume-data';
 import * as React from 'react';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 
 type ProfileAvatarProps = {
-  name: ResumeData['name'];
-  avatarUrl: ResumeData['avatarUrl'];
-  initials: ResumeData['initials'];
+  name: string;
+  avatarUrl: string;
+  initials: string;
 };
 
 export const ProfileAvatar: React.FC<ProfileAvatarProps> = ({
