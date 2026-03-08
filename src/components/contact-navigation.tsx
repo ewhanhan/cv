@@ -23,10 +23,11 @@ export const ContactNavigation: React.FC<ContactNavigationProps> = ({
   <nav className="space-y-1.5" aria-label="Contact information and links">
     <address className="not-italic">
       {/* Location - always visible */}
-      <p className={`
-        max-w-md items-center font-mono text-xs text-pretty
-        text-muted-foreground
-      `}
+      <p
+        className={`
+          max-w-md items-center font-mono text-xs text-pretty
+          text-muted-foreground
+        `}
       >
         <a
           className={`
@@ -75,10 +76,11 @@ export const ContactNavigation: React.FC<ContactNavigationProps> = ({
       </div>
 
       {/* Contact links - print view (text) */}
-      <div className={`
-        hidden flex-col gap-x-1 font-mono text-sm text-muted-foreground
-        print:flex
-      `}
+      <div
+        className={`
+          hidden flex-col gap-x-1 font-mono text-sm text-muted-foreground
+          print:flex
+        `}
       >
         {email && (
           <a href={`mailto:${email}`} aria-hidden="true">
@@ -91,16 +93,9 @@ export const ContactNavigation: React.FC<ContactNavigationProps> = ({
           </a>
         )}
         {social.map(socialItem => (
-          <a
-            key={socialItem.name}
-            href={socialItem.url}
-            aria-hidden="true"
-          >
+          <a key={socialItem.name} href={socialItem.url} aria-hidden="true">
             <span>
-              {socialItem.name}
-              :
-              {' '}
-              {socialItem.url}
+              {socialItem.name}: {socialItem.url}
             </span>
           </a>
         ))}

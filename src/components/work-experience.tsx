@@ -16,18 +16,16 @@ export const WorkExperience: React.FC<WorkExperienceProps> = ({
   return (
     <Fragment>
       <h2 className="text-xl font-bold">Work Experience</h2>
-      {workExperience.map((work) => {
+      {workExperience.map(work => {
         return (
           <Card key={work.company}>
             <CardHeader>
-              <div className={`
-                flex items-center justify-between gap-x-2 text-base
-              `}
-              >
-                <h3 className={`
-                  inline-flex items-center justify-center gap-x-1 leading-none
-                  font-semibold
-                `}
+              <div className="flex items-center justify-between gap-x-2 text-base">
+                <h3
+                  className={`
+                    inline-flex items-center justify-center gap-x-1 leading-none
+                    font-semibold
+                  `}
                 >
                   <a
                     className="hover:underline"
@@ -52,10 +50,7 @@ export const WorkExperience: React.FC<WorkExperienceProps> = ({
                   </span>
                 </h3>
                 <div className="text-sm text-gray-500 tabular-nums">
-                  {work.start}
-                  {' '}
-                  -
-                  {work.end}
+                  {work.start} -{work.end}
                 </div>
               </div>
 
