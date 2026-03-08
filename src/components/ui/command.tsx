@@ -56,7 +56,13 @@ const CommandDialog = ({ children, ...props }: CommandDialogProps) => {
   );
 };
 
-const CommandInput = ({ ref, className, ...props }: React.ComponentPropsWithoutRef<typeof CommandPrimitive.Input> & { ref?: React.RefObject<React.ElementRef<typeof CommandPrimitive.Input> | null> }) => (
+const CommandInput = ({
+  ref,
+  className,
+  ...props
+}: React.ComponentPropsWithoutRef<typeof CommandPrimitive.Input> & {
+  ref?: React.RefObject<React.ElementRef<typeof CommandPrimitive.Input> | null>;
+}) => (
   <div className="flex items-center border-b px-3" cmdk-input-wrapper="">
     <Search className="mr-2 size-4 shrink-0 opacity-50" />
     <CommandPrimitive.Input
@@ -76,7 +82,13 @@ const CommandInput = ({ ref, className, ...props }: React.ComponentPropsWithoutR
 
 CommandInput.displayName = CommandPrimitive.Input.displayName;
 
-const CommandList = ({ ref, className, ...props }: React.ComponentPropsWithoutRef<typeof CommandPrimitive.List> & { ref?: React.RefObject<React.ElementRef<typeof CommandPrimitive.List> | null> }) => (
+const CommandList = ({
+  ref,
+  className,
+  ...props
+}: React.ComponentPropsWithoutRef<typeof CommandPrimitive.List> & {
+  ref?: React.RefObject<React.ElementRef<typeof CommandPrimitive.List> | null>;
+}) => (
   <CommandPrimitive.List
     ref={ref}
     className={cn('max-h-[300px] overflow-x-hidden overflow-y-auto', className)}
@@ -86,7 +98,12 @@ const CommandList = ({ ref, className, ...props }: React.ComponentPropsWithoutRe
 
 CommandList.displayName = CommandPrimitive.List.displayName;
 
-const CommandEmpty = ({ ref, ...props }: React.ComponentPropsWithoutRef<typeof CommandPrimitive.Empty> & { ref?: React.RefObject<React.ElementRef<typeof CommandPrimitive.Empty> | null> }) => (
+const CommandEmpty = ({
+  ref,
+  ...props
+}: React.ComponentPropsWithoutRef<typeof CommandPrimitive.Empty> & {
+  ref?: React.RefObject<React.ElementRef<typeof CommandPrimitive.Empty> | null>;
+}) => (
   <CommandPrimitive.Empty
     ref={ref}
     className="py-6 text-center text-sm"
@@ -96,7 +113,13 @@ const CommandEmpty = ({ ref, ...props }: React.ComponentPropsWithoutRef<typeof C
 
 CommandEmpty.displayName = CommandPrimitive.Empty.displayName;
 
-const CommandGroup = ({ ref, className, ...props }: React.ComponentPropsWithoutRef<typeof CommandPrimitive.Group> & { ref?: React.RefObject<React.ElementRef<typeof CommandPrimitive.Group> | null> }) => (
+const CommandGroup = ({
+  ref,
+  className,
+  ...props
+}: React.ComponentPropsWithoutRef<typeof CommandPrimitive.Group> & {
+  ref?: React.RefObject<React.ElementRef<typeof CommandPrimitive.Group> | null>;
+}) => (
   <CommandPrimitive.Group
     ref={ref}
     className={cn(
@@ -114,7 +137,15 @@ const CommandGroup = ({ ref, className, ...props }: React.ComponentPropsWithoutR
 
 CommandGroup.displayName = CommandPrimitive.Group.displayName;
 
-const CommandSeparator = ({ ref, className, ...props }: React.ComponentPropsWithoutRef<typeof CommandPrimitive.Separator> & { ref?: React.RefObject<React.ElementRef<typeof CommandPrimitive.Separator> | null> }) => (
+const CommandSeparator = ({
+  ref,
+  className,
+  ...props
+}: React.ComponentPropsWithoutRef<typeof CommandPrimitive.Separator> & {
+  ref?: React.RefObject<React.ElementRef<
+    typeof CommandPrimitive.Separator
+  > | null>;
+}) => (
   <CommandPrimitive.Separator
     ref={ref}
     className={cn('-mx-1 h-px bg-border', className)}
@@ -123,7 +154,13 @@ const CommandSeparator = ({ ref, className, ...props }: React.ComponentPropsWith
 );
 CommandSeparator.displayName = CommandPrimitive.Separator.displayName;
 
-const CommandItem = ({ ref, className, ...props }: React.ComponentPropsWithoutRef<typeof CommandPrimitive.Item> & { ref?: React.RefObject<React.ElementRef<typeof CommandPrimitive.Item> | null> }) => (
+const CommandItem = ({
+  ref,
+  className,
+  ...props
+}: React.ComponentPropsWithoutRef<typeof CommandPrimitive.Item> & {
+  ref?: React.RefObject<React.ElementRef<typeof CommandPrimitive.Item> | null>;
+}) => (
   <CommandPrimitive.Item
     ref={ref}
     className={cn(
