@@ -38,6 +38,12 @@ export default antfu(
   // --- Accessibility Rules ---
   jsxA11y.flatConfigs.recommended,
   {
+    files: ['scripts/**', 'tests/**'],
+    rules: {
+      'e18e/prefer-static-regex': 'off',
+    },
+  },
+  {
     rules: {
       'antfu/no-top-level-await': 'off', // Allow top-level await
       'style/brace-style': ['error', '1tbs'], // Use the default brace style
