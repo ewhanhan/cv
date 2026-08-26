@@ -1,6 +1,10 @@
 import { expect, test } from '@playwright/test';
 import { TEST_RESUME_DATA } from './test-data';
 
+// A4 at 96 DPI: 210mm x 297mm.
+const A4_WIDTH = 794;
+const A4_HEIGHT = 1123;
+
 test.describe('CV Print Functionality', () => {
   test.beforeEach(async ({ page }) => {
     await page.goto('/');
@@ -32,15 +36,23 @@ test.describe('CV Print Functionality', () => {
   });
 
   test('print layout fits within two A4 pages', async ({ page }) => {
+    // Printing lays the page out at paper width, never at the device viewport,
+    // so the height below is only meaningful once the viewport matches A4.
+    // Measured at a phone width the same content reflows to ~2300px and the
+    // assertion reports a page overflow that would never reach paper.
+    await page.setViewportSize({ width: A4_WIDTH, height: A4_HEIGHT });
+
     // Take a screenshot for visual comparison (useful for debugging)
     await page.screenshot({
       path: 'test-results/print-layout.png',
       fullPage: true,
     });
 
-    // A4 page at 96 DPI is ~1123px tall; allow up to 2 pages
-    const maxTwoA4Pages = 1123 * 2;
+    const maxTwoA4Pages = A4_HEIGHT * 2;
     const pageHeight = await page.evaluate(() => document.body.scrollHeight);
-    expect(pageHeight).toBeLessThan(maxTwoA4Pages);
+    expect(
+      pageHeight,
+      `print layout is ${pageHeight}px tall at ${A4_WIDTH}px wide, exceeding the ${maxTwoA4Pages}px budget for two A4 pages`,
+    ).toBeLessThan(maxTwoA4Pages);
   });
 });
