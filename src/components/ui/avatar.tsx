@@ -5,7 +5,7 @@ import * as React from 'react';
 
 import { cn } from '@/lib/utils';
 
-const Avatar = ({ ref, className, ...props }: React.ComponentPropsWithoutRef<typeof AvatarPrimitive.Root> & { ref?: React.RefObject<React.ElementRef<typeof AvatarPrimitive.Root> | null> }) => (
+const Avatar = ({ ref, className, ...props }: React.ComponentPropsWithoutRef<typeof AvatarPrimitive.Root> & { ref?: React.RefObject<React.ComponentRef<typeof AvatarPrimitive.Root> | null> }) => (
   <AvatarPrimitive.Root
     ref={ref}
     className={cn(
@@ -17,7 +17,7 @@ const Avatar = ({ ref, className, ...props }: React.ComponentPropsWithoutRef<typ
 );
 Avatar.displayName = AvatarPrimitive.Root.displayName;
 
-const AvatarImage = ({ ref, className, ...props }: React.ComponentPropsWithoutRef<typeof AvatarPrimitive.Image> & { ref?: React.RefObject<React.ElementRef<typeof AvatarPrimitive.Image> | null> }) => (
+const AvatarImage = ({ ref, className, ...props }: React.ComponentPropsWithoutRef<typeof AvatarPrimitive.Image> & { ref?: React.RefObject<React.ComponentRef<typeof AvatarPrimitive.Image> | null> }) => (
   <AvatarPrimitive.Image
     ref={ref}
     className={cn('aspect-square size-full', className)}
@@ -26,7 +26,7 @@ const AvatarImage = ({ ref, className, ...props }: React.ComponentPropsWithoutRe
 );
 AvatarImage.displayName = AvatarPrimitive.Image.displayName;
 
-const AvatarFallback = ({ ref, className, ...props }: React.ComponentPropsWithoutRef<typeof AvatarPrimitive.Fallback> & { ref?: React.RefObject<React.ElementRef<typeof AvatarPrimitive.Fallback> | null> }) => (
+const AvatarFallback = ({ ref, className, ...props }: React.ComponentPropsWithoutRef<typeof AvatarPrimitive.Fallback> & { ref?: React.RefObject<React.ComponentRef<typeof AvatarPrimitive.Fallback> | null> }) => (
   <AvatarPrimitive.Fallback
     ref={ref}
     className={cn(
