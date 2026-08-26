@@ -51,7 +51,6 @@ export function ContactNavigation({
             flex gap-x-1 pt-1 font-mono text-sm text-muted-foreground
             print:hidden
           `}
-          aria-label="Contact and social links"
         >
           {email
             ? (
