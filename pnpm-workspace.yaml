@@ -14,3 +14,10 @@ trustPolicy: no-downgrade
 # The tarball integrity matches the registry exactly; excluded until Babel drops semver@6.
 trustPolicyExclude:
   - semver@6.3.1
+
+# eslint-plugin-jsx-a11y@6.10.2 is the latest release and predates ESLint 10, so its
+# peer range still tops out at ^9. Verified working on ESLint 10.9.1: alt-text and
+# anchor-is-valid both fire correctly. Drop this once upstream widens the range.
+peerDependencyRules:
+  allowedVersions:
+    eslint-plugin-jsx-a11y>eslint: '10'
