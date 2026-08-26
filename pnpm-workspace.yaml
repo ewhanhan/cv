@@ -1,5 +1,16 @@
+allowBuilds:
+  sharp: true
+
+minimumReleaseAgeExclude:
+  - eslint-plugin-react-refresh@0.5.5
+  - knip@6.32.3
+
 shellEmulator: true
 trustPolicy: no-downgrade
 
-allowBuilds:
-  sharp: true
+# semver@6.3.1 is a pinned transitive of @babel/core (via babel-plugin-react-compiler).
+# It predates npm trusted publishing, so it carries a registry signature but no build
+# attestation, which no-downgrade reads as a trust downgrade relative to semver@7.x.
+# The tarball integrity matches the registry exactly; excluded until Babel drops semver@6.
+trustPolicyExclude:
+  - semver@6.3.1
