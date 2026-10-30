@@ -1,35 +1,57 @@
 'use client';
 
+import type { CommandMenuDialogProps } from '@/components/command-menu-dialog';
+import dynamic from 'next/dynamic';
 import * as React from 'react';
 
-import {
-  CommandDialog,
-  CommandEmpty,
-  CommandGroup,
-  CommandInput,
-  CommandItem,
-  CommandList,
-  CommandSeparator,
-} from '@/components/ui/command';
+// `ssr: false` is only valid in a Client Component, and dynamic() called from a
+// Server Component is not code-split, so the dialog is split off here.
+const CommandMenuDialog = dynamic(
+  () =>
+    import('@/components/command-menu-dialog').then(
+      mod => mod.CommandMenuDialog,
+    ),
+  { ssr: false },
+);
 
-type CommandMenuProps = {
-  links: { url: string; title: string }[];
-};
+type CommandMenuProps = Pick<CommandMenuDialogProps, 'links'>;
+
+// 'closed' (not 'unopened') keeps the dialog mounted so the close animation plays.
+type DialogState = 'unopened' | 'open' | 'closed';
 
 export const CommandMenu = ({ links }: CommandMenuProps) => {
-  const [isOpen, setIsOpen] = React.useState(false);
+  const [dialogState, setDialogState] = React.useState<DialogState>('unopened');
 
   React.useEffect(() => {
     const down = (e: KeyboardEvent) => {
       if (e.key === 'j' && (e.metaKey || e.ctrlKey)) {
         e.preventDefault();
-        setIsOpen(prev => !prev);
+        setDialogState(prev => (prev === 'open' ? 'closed' : 'open'));
       }
     };
 
     document.addEventListener('keydown', down);
     return () => document.removeEventListener('keydown', down);
   }, []);
+
+  // Warm the chunk off the critical path so the first open is instant.
+  React.useEffect(() => {
+    const preloadDialog = () => {
+      void import('@/components/command-menu-dialog');
+    };
+
+    if ('requestIdleCallback' in window) {
+      const idleId = window.requestIdleCallback(preloadDialog);
+      return () => window.cancelIdleCallback(idleId);
+    }
+
+    const timeoutId = setTimeout(preloadDialog, 1000);
+    return () => clearTimeout(timeoutId);
+  }, []);
+
+  const handleOpenChange = (isOpen: boolean) => {
+    setDialogState(isOpen ? 'open' : 'closed');
+  };
 
   return (
     <>
@@ -55,36 +77,15 @@ export const CommandMenu = ({ links }: CommandMenuProps) => {
         {' '}
         to open the command menu
       </p>
-      <CommandDialog open={isOpen} onOpenChange={setIsOpen}>
-        <CommandInput placeholder="Type a command or search..." />
-        <CommandList>
-          <CommandEmpty>No results found.</CommandEmpty>
-          <CommandGroup heading="Actions">
-            <CommandItem
-              onSelect={() => {
-                setIsOpen(false);
-                window.print();
-              }}
-            >
-              <span>Print</span>
-            </CommandItem>
-          </CommandGroup>
-          <CommandGroup heading="Links">
-            {links.map(({ url, title }) => (
-              <CommandItem
-                key={url}
-                onSelect={() => {
-                  setIsOpen(false);
-                  window.open(url, '_blank');
-                }}
-              >
-                <span>{title}</span>
-              </CommandItem>
-            ))}
-          </CommandGroup>
-          <CommandSeparator />
-        </CommandList>
-      </CommandDialog>
+      {dialogState === 'unopened'
+        ? null
+        : (
+            <CommandMenuDialog
+              links={links}
+              isOpen={dialogState === 'open'}
+              onOpenChange={handleOpenChange}
+            />
+          )}
     </>
   );
 };
