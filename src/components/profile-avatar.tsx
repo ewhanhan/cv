@@ -1,20 +1,18 @@
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import Image from 'next/image';
+import avatar from '@/data/images/Avatar.png';
 
 type ProfileAvatarProps = {
   name: string;
-  avatarUrl: string;
-  initials: string;
 };
 
-export function ProfileAvatar({
-  name,
-  avatarUrl,
-  initials,
-}: ProfileAvatarProps) {
+export function ProfileAvatar({ name }: ProfileAvatarProps) {
   return (
-    <Avatar className="size-28">
-      <AvatarImage alt={name} src={avatarUrl} />
-      <AvatarFallback>{initials}</AvatarFallback>
-    </Avatar>
+    <Image
+      className="size-28 shrink-0 rounded-xl object-cover"
+      src={avatar}
+      alt={name}
+      sizes="112px"
+      loading="eager"
+    />
   );
 }

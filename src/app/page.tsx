@@ -39,11 +39,7 @@ export default function Page() {
             locationLink={RESUME_DATA.locationLink}
             contact={RESUME_DATA.contact}
           />
-          <ProfileAvatar
-            name={RESUME_DATA.name}
-            avatarUrl={RESUME_DATA.avatarUrl}
-            initials={RESUME_DATA.initials}
-          />
+          <ProfileAvatar name={RESUME_DATA.name} />
         </Header>
 
         <Section>

@@ -5,13 +5,11 @@ import IBMLogo from '@/data/images/logos/IBM.png';
 
 export const RESUME_DATA = {
   name: 'Ewhan Han',
-  initials: 'EH',
   location: 'North York / Toronto, Canada',
   locationLink: 'https://www.google.com/maps/place/northyork',
   about: '',
   summary:
     'Full-stack software engineer with 4+ years of experience building responsive web applications end-to-end — from React frontends to Node.js and Azure-based backends with SQL data layers. Experienced in rapid MVP delivery and remote team collaboration. Passionate about creating impactful solutions for users through teamwork and iteration.',
-  avatarUrl: 'https://avatars.githubusercontent.com/u/40779221?v=4',
   personalWebsiteUrl: 'https://ewhan.me',
   contact: {
     email: 'ewhan.han@gmail.com',
