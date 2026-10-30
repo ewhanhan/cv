@@ -45,6 +45,7 @@ const CommandDialog = ({ children, ...props }: CommandDialogProps) => {
             **:[[cmdk-group-heading]]:px-2 **:[[cmdk-group-heading]]:font-medium
             **:[[cmdk-group-heading]]:text-muted-foreground
             **:[[cmdk-group]]:px-2
+            **:[[cmdk-input-wrapper]]:pr-10
             **:[[cmdk-input]]:h-12
             **:[[cmdk-item]]:px-2 **:[[cmdk-item]]:py-3
           `}
@@ -63,7 +64,14 @@ const CommandInput = ({
 }: React.ComponentPropsWithoutRef<typeof CommandPrimitive.Input> & {
   ref?: React.RefObject<React.ComponentRef<typeof CommandPrimitive.Input> | null>;
 }) => (
-  <div className="flex items-center border-b px-3" cmdk-input-wrapper="">
+  <div
+    className={`
+      flex items-center border-b px-3
+      focus-within:outline-2 focus-within:-outline-offset-2
+      focus-within:outline-ring
+    `}
+    cmdk-input-wrapper=""
+  >
     <Search className="mr-2 size-4 shrink-0 opacity-50" />
     <CommandPrimitive.Input
       ref={ref}

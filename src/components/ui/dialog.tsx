@@ -68,7 +68,7 @@ const DialogContent = ({ ref, className, children, ...props }: React.ComponentPr
     >
       {children}
       <DialogPrimitive.Close className={`
-        absolute top-4 right-4 rounded-sm opacity-70 ring-offset-background
+        absolute top-3 right-3 rounded-sm p-1 opacity-70 ring-offset-background
         transition-opacity
         hover:opacity-100
         focus:ring-2 focus:ring-ring focus:ring-offset-2 focus:outline-hidden
