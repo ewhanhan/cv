@@ -38,7 +38,6 @@ export function WorkExperience({ workExperience }: WorkExperienceProps) {
                     href={work.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    aria-label={`External link that opens in a new tab: ${work.company}`}
                   >
                     {work.company}
                   </a>

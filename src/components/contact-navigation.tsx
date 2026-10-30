@@ -39,7 +39,6 @@ export function ContactNavigation({
             `}
             href={locationLink}
             target="_blank"
-            aria-label="View my location on google maps"
           >
             <GlobeIcon className="size-3" />
             {location}
@@ -56,7 +55,7 @@ export function ContactNavigation({
             ? (
                 <ContactButton
                   href={`mailto:${email}`}
-                  ariaLabel={`External link to email: ${email}`}
+                  ariaLabel={`Email ${email}`}
                   icon={MailIcon}
                 />
               )
@@ -65,7 +64,7 @@ export function ContactNavigation({
             ? (
                 <ContactButton
                   href={`tel:${tel}`}
-                  ariaLabel={`External link to phone: ${tel}`}
+                  ariaLabel={`Phone ${tel}`}
                   icon={PhoneIcon}
                 />
               )
@@ -74,7 +73,7 @@ export function ContactNavigation({
             <ContactButton
               key={socialItem.name}
               href={socialItem.url}
-              ariaLabel={`External link that opens ${socialItem.name}: ${socialItem.url}`}
+              ariaLabel={socialItem.name}
               icon={socialItem.icon}
             />
           ))}
