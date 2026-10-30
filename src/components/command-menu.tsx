@@ -67,8 +67,8 @@ export const CommandMenu = ({ links }: CommandMenuProps) => {
         <kbd
           className={`
             pointer-events-none inline-flex h-5 items-center gap-1 rounded-sm
-            border bg-muted px-1.5 font-mono text-[10px] font-medium
-            text-muted-foreground opacity-100 select-none
+            border bg-secondary px-1.5 font-mono text-[0.625rem] font-medium
+            text-secondary-foreground opacity-100 select-none
           `}
         >
           <span className="text-xs">⌘</span>
